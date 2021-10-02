@@ -1,0 +1,237 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Saira', sans-serif;
+}
+
+@import "variables";
+
+body{
+    background-image: url(../images/photo-1550895030-823330fc2551.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+/*----Menú de Navegación Big Screens----*/
+
+header{/////////
+    background-image: url(../images/fondo-headerrrr2.jpg);
+    background-repeat: no-repeat;
+    background-position: cover;
+    background-size: 100%;
+    width: 100%;
+}
+
+#logo__superior{////
+background-position-y: 25%;
+background-position-x: center;
+background-image: url(../images/logo-life-sombreado.png);
+background-size: 35%;
+background-repeat: no-repeat;
+}
+
+#logo__superior img{
+    width: $size3*35;
+}
+
+#menu__nav{///
+    position: relative;
+    top: -6rem;
+    width: 100%;
+}
+
+.container__menu{
+    background-color: $color1;
+    height: 5rem;
+    width: 100%;
+    padding-top: 1.75rem;
+    text-align: center;
+    box-shadow: 0px 5px 5px rgba(29, 29, 29, 0.377), 0px -5px 5px rgba(32, 32, 32, 0.329);
+}
+
+.nav__inline li a {
+    background-color: $color1;
+    color: $color3;
+    padding: 1.5rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    align-items: center;
+    font-size: $size1*2;
+}
+
+.nav__inline--li{
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.nav__inline li a:hover {
+    background-color: $color3;
+    color: black;
+    height: 3.2rem;
+}
+
+/*----Menú de Navegación Small Screens----*/
+#menu__nav--responsive{
+    margin: auto;
+    width: 100%;
+}
+
+#ulNavResponsive{
+    margin-left: 5%;
+}
+
+.nav__responsive{
+    padding-left: 0;
+}
+
+.nav__responsive li a{
+    background-color: $color1;
+    color: $color3;
+    text-decoration: none;
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+}
+
+.nav__responsive li a:hover{
+    background-color: $color3;
+    color: $color5;
+    background-position: center;
+}
+
+.nav__responsive li ul{
+    display: none;
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+    width: 80%; /*esto es el tamaño de la caja de los elementos del submenu */
+}
+
+.nav__responsive li:hover>ul {
+    display: block;
+    z-index: 100;
+}
+
+.container__menu--res{
+    background-color: $color1;
+    height: 3rem;
+    width: 100%;
+    padding-top: 0.75rem;
+    background-position-x: center;
+    text-align: center;
+    box-shadow: 0px 5px 5px rgba(29, 29, 29, 0.377), 0px -5px 5px rgba(32, 32, 32, 0.329);
+}
+/*--------------------------*/
+
+/*-------------------INDEX---------------*/
+
+#mainActividades{
+    margin-top: 12%;
+}
+
+.container__actividad{
+    padding-top: 20rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 7rem;
+}
+
+.contenedor{
+    position: relative;
+}
+
+.img__index--act{
+    border-radius: 100%;
+    filter: grayscale(1);
+}
+
+.filtro__hov{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        background: $color2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        
+        p{
+            transform: translateY(2.5rem);
+            font-size: $size3*2;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.815);
+        }
+    }
+
+    .filtro__hov:hover {
+        opacity: 1; 
+
+        p{
+            transform: translateY(0rem);
+            color: $color3;
+        }                 
+}
+
+@media screen and (min-width: 360px){
+
+    .container__actividad{
+        padding: 0%;
+        width: 100%;
+    }
+
+    .img__index--act{
+        height: 15rem;
+        width: 15rem;
+    }
+
+    #menu__nav{
+        display: none;
+    }
+
+    #logo__superior{
+        padding: 15%;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px){
+    #ulNavResponsive{
+        margin-left: 7%;
+    }
+}
+
+@media screen and (min-width: 768px){
+
+    #logo__superior{
+        text-align: center;
+        padding: 20%;
+    }
+
+    #menu__nav{
+        display: inline;
+    }
+
+    #menu__nav--responsive{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+
+    .img__index--act{
+        height: 13rem;
+        width: 13rem;
+    }
+}
+
+@import "contacto";
