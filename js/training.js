@@ -289,13 +289,18 @@ while(tipoEntrenamiento != 1 && tipoEntrenamiento != 2 && tipoEntrenamiento != 3
 // Devolución al usuario de rutina elegida de acuerdo a objetivo e intensidad
 let rutinaElegida = obtenerRutina(intensidadEntrenamiento, tipoEntrenamiento);
 rutinaElegida.usuario = usuario;
-alert(JSON.stringify(rutinaElegida));
+
+// Imprime en el HTML la Rutina que le devuelve al usuario según lo solicitado por PROMPT
+
+const contenedorrutImpresa = document.getElementById("rutinasImpresas");
+contenedorrutImpresa.innerHTML = JSON.stringify(rutinaElegida);
 
 // HTML de la página de Training a partir de JS (DOM)
 
 const contenedorrutinasTraining = document.getElementById("rutinasTraining");
 const generadorRutinas = document.createElement("article");
 
+// titulo ingresado por js
 const contenido = {
     titulo: "Generador de Rutinas",
     texto: "Complete el formulario y genere una rutina personalizada de acuerdo a sus necesidades"
