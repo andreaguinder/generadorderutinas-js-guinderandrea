@@ -33,7 +33,7 @@ actividadesGym.forEach((actGym) => {
     div.className = "card-img-top"
     div.style = "width: 18rem"
     div.innerHTML = `
-                    <img src=${actGym.img} class="card-img-top mt-5" alt="...">
+                    <img src=${actGym.img} class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title grande">${actGym.nombreActGym}</h5>
                         <a href="#" class="btn btn-dark btn-lg">+ Info</a>
