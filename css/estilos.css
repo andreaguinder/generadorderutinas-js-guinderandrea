@@ -136,14 +136,15 @@ header {
 }
 
 .container__actividad {
-  padding-top: 20rem;
+  margin-top: -5rem;
+  padding: 5%;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 7rem;
 }
 
 .contenedor {
   position: relative;
+  margin: 2%;
 }
 
 .img__index--act {
@@ -183,6 +184,7 @@ header {
   .container__actividad {
     padding: 0%;
     width: 100%;
+    margin-top: 2rem;
   }
 
   .img__index--act {
@@ -204,6 +206,10 @@ header {
   }
 }
 @media screen and (min-width: 768px) {
+  .container__actividad {
+    margin-top: -5rem;
+  }
+
   #logo__superior {
     text-align: center;
     padding: 20%;

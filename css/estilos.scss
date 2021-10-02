@@ -28,11 +28,11 @@ header{/////////
 }
 
 #logo__superior{////
-background-position-y: 25%;
-background-position-x: center;
-background-image: url(../images/logo-life-sombreado.png);
-background-size: 35%;
-background-repeat: no-repeat;
+    background-position-y: 25%;
+    background-position-x: center;
+    background-image: url(../images/logo-life-sombreado.png);
+    background-size: 35%;
+    background-repeat: no-repeat;
 }
 
 #logo__superior img{
@@ -138,14 +138,15 @@ background-repeat: no-repeat;
 }
 
 .container__actividad{
-    padding-top: 20rem;
+    margin-top: -5rem;
+    padding: 5%;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 7rem;
 }
 
 .contenedor{
     position: relative;
+    margin: 2%;
 }
 
 .img__index--act{
@@ -188,6 +189,7 @@ background-repeat: no-repeat;
     .container__actividad{
         padding: 0%;
         width: 100%;
+        margin-top: 2rem;
     }
 
     .img__index--act{
@@ -211,6 +213,10 @@ background-repeat: no-repeat;
 }
 
 @media screen and (min-width: 768px){
+
+    .container__actividad{
+    margin-top: -5rem;
+    }
 
     #logo__superior{
         text-align: center;
