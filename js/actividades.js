@@ -16,14 +16,14 @@ contenedorArticulo.appendChild(articulo);
 
 // Array de cards con info de actividades del Gym
 const actividadesGym = [
-    {img: '/images/photo-1616763880410-744958efc093.jpg', nombreActGym: "Indoor Running", detalleActGym: "+ Info"},
-    {img: 'https://via.placeholder.com/200', nombreActGym: "Musculación", detalleActGym: "+ Info"},
-    {img: 'https://via.placeholder.com/200', nombreActGym: "Funcional", detalleActGym: "+ Info"},
-    {img: 'https://via.placeholder.com/200', nombreActGym: "CrossFit", detalleActGym: "+ Info"},
-    {img: 'https://via.placeholder.com/200', nombreActGym: "Spinning", detalleActGym: "+ Info"},
-    {img: 'https://via.placeholder.com/200', nombreActGym: "Aeróbica", detalleActGym: "+ Info"},
-    {img: 'https://via.placeholder.com/200', nombreActGym: "Pilates", detalleActGym: "+ Info"},
-    {img: 'https://via.placeholder.com/200', nombreActGym: "Kick-Boxing", detalleActGym: "+ Info"},
+    {img: '../images/indoor-running-act.jpg', nombreActGym: "Indoor Running", detalleActGym: "+ Info"},
+    {img: '../images/musculacion-act.jpg', nombreActGym: "Musculación", detalleActGym: "+ Info"},
+    {img: '../images/funcional-act.jpg', nombreActGym: "Funcional", detalleActGym: "+ Info"},
+    {img: '../images/crossfit-act.jpeg', nombreActGym: "CrossFit", detalleActGym: "+ Info"},
+    {img: '../images/spinning-act.jpg', nombreActGym: "Spinning", detalleActGym: "+ Info"},
+    {img: '../images/aerobica-act.jpg', nombreActGym: "Aeróbica", detalleActGym: "+ Info"},
+    {img: '../images/pilates-act.jpeg', nombreActGym: "Pilates", detalleActGym: "+ Info"},
+    {img: '../images/kick-boxing-act.jpg', nombreActGym: "Kick-Boxing", detalleActGym: "+ Info"},
 ]
 
 const contenedoractividadesGym = document.getElementById("actGym");
