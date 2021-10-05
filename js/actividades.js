@@ -42,3 +42,6 @@ actividadesGym.forEach((actGym) => {
 
     contenedoractividadesGym.appendChild(div);
 })
+
+// Evento para generar un modal en cada click
+

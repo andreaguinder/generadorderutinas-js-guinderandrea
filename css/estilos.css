@@ -73,6 +73,20 @@ header {
   height: 3.2rem;
 }
 
+.btnGym {
+  color: #ffffff;
+  padding: 0.75rem;
+  background-color: #00e6d3;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5rem;
+  background-position-x: center;
+}
+
+.btnGym:hover {
+  background-color: #07a799;
+}
+
 /*----Menú de Navegación Small Screens----*/
 #menu__nav--responsive {
   margin: auto;
@@ -130,6 +144,50 @@ header {
 }
 
 /*--------------------------*/
+/*----------TRAINING GENERADOR--------*/
+.form__contact {
+  color: black;
+  background-color: #07a799;
+  border-radius: 5px;
+  margin: 20%;
+}
+
+fieldset {
+  border: 2px solid rgba(0, 230, 211, 0.473);
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Ventanas modal rutina*/
+.modalContainerRutinas {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-in;
+}
+
+.modalRutinas {
+  background-color: #ffffff;
+  width: 30rem;
+  height: 50rem;
+  border-radius: 2rem;
+  text-align: center;
+  justify-content: last baseline;
+  padding: 1rem;
+  margin: auto;
+}
+
+.modalRutinasActive {
+  visibility: visible;
+  opacity: 1;
+}
+
 /*-------------------INDEX---------------*/
 .container__actividad {
   margin-top: -5rem;

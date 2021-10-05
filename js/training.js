@@ -1,13 +1,4 @@
 // SE DEFINEN LAS VARIABLES DE JS
-
-let nombreUsuario;
-let edadUsuario;
-let alturaUsuario;
-let pesoUsuario;
-
-let respuestaPositiva = "si";
-let respuestaNegativa = "no";
-
 let esDeportista;
 
 let intensidadEntrenamiento;
@@ -19,6 +10,7 @@ let datosUsuario;
 // SE DEFINEN LAS CLASES DEL SIMULADOR: GENERADOR DE RUTINAS
 // SE DEFINEN LAS CLASES DEL SIMULADOR: GENERADOR DE RUTINAS
 // SE DEFINEN LAS CLASES DEL SIMULADOR: GENERADOR DE RUTINAS
+
 
 // SE DEFINEN LOS DATOS QUE SE VAN A ADQUIRIR DEL USUARIO
 class Usuario {
@@ -151,7 +143,6 @@ let listaMuscular2 = [ejercicio16, ejercicio17, ejercicio18];
 let jornada9 = new Jornada("Tren Inferior", "Musculación/Tonificación", listaMuscular2);
 
 
-
 // SE DEFINEN LAS RUTINAS POR DÍAS
 // SE DEFINEN LAS RUTINAS POR DÍAS
 // SE DEFINEN LAS RUTINAS POR DÍAS
@@ -190,6 +181,16 @@ let rutina9 = new PlanillaRutina(usuario, [jornada2, jornada8, jornada9, jornada
 // SE DEFINEN LAS FUNCIONES DEL SIMULADOR
 // SE DEFINEN LAS FUNCIONES DEL SIMULADOR
 
+// Obtengo el usuario
+usuario = new Usuario(
+    document.getElementById("nombreUsuario").value,
+    document.getElementById("edadUsuario").value,
+    document.getElementById("alturaUsuario").value,
+    document.getElementById("pesoUsuario").value,
+    document.getElementById("esDeportista").value
+);
+
+/*
 //  FUNCIÓN PARA PEDIR LOS DATOS PERSONALES EN BASE A CLASS USUARIO
 function pedirDatosPersonales(){
     usuario = new Usuario(prompt("Ingrese su nombre y apellido"), 
@@ -201,7 +202,7 @@ function pedirDatosPersonales(){
 
     usuario.mostrarDatosUsuario();
 }
-
+*/
 // CÁLCULO IMC PARA QUIEN NO ES DEPORTISTA
 function mostrarResultadoIMC(resultadoIMC){
     alert("Analizamos tus datos para obtener tu índice de masa corporal, para poder asesorarte mejor sobre que rutina deberías generar luego. Tu IMC es: " + resultadoIMC);
@@ -219,12 +220,17 @@ function mostrarResultadoIMC(resultadoIMC){
     }
 }
 
+
+
 // SE LE PREGUNTA AL USUARIO CON QUE NIVEL DE INTENSIDAD QUIERE ENTRENAR Y CUÁL ES SU OBJETIVO
+/*
 function preferenciaEntrenamiento(){
     intensidadEntrenamiento = parseInt(prompt("¿Cuál es el nivel de entrenamiento que querés tener?: \n" + "Indicá con un número según corresponda \n" + "(1) Bajo \n" + "(2) Moderado \n" + "(3) Intenso"));
     
     tipoEntrenamiento = parseInt(prompt("¿Cuál es tu objetivo?: \n" + "Indicá con un número según corresponda \n" + "(1) Bajar de Peso \n" + "(2) Tonificar/Definir \n" + "(3) Muscularte"));
 }
+*/
+
 
 // FUNCIÓN QUE LE DEVOLVERÁ AL USUARIO LA RUTINA CREADA POR EL SIMULADOR
 function obtenerRutina(intensidadEntrenamiento, tipoEntrenamiento){
@@ -254,6 +260,10 @@ function obtenerRutina(intensidadEntrenamiento, tipoEntrenamiento){
 // ACÁ COMIENZA LA INTERACCIÓN CON EL USUARIO DEL SIMULADOR
 // ACÁ COMIENZA LA INTERACCIÓN CON EL USUARIO DEL SIMULADOR
 
+
+
+
+/*
 alert("Bienvenido a Fitness Life, a continuación le solicitaremos algunos datos personales:");
 
 // Si el usuario igresa mal sus datos, se le solicitará nuevamente que los ingrese hasta que lo haga bien
@@ -274,7 +284,11 @@ while(datosUsuario == respuestaNegativa || datosUsuario === undefined){
         alert("Por favor ingrese nuevamente sus datos");
     }
 }
+*/
 
+
+
+/*
 //Acá empiezan las rutinas acorde a las preferencias que elige el usuario, que pueden o no basarse en las recomendaciones arrojadas por el IMC
 do {
     intensidadEntrenamiento = parseInt(prompt("¿Cuál es el nivel de entrenamiento que querés tener?: \n" + "Indicá con un número según corresponda \n" + "(1) Bajo \n" + "(2) Moderado \n" + "(3) Intenso"));
@@ -285,6 +299,9 @@ do {
     tipoEntrenamiento = parseInt(prompt("¿Cuál es tu objetivo?: \n" + "Indicá con un número según corresponda \n" + "(1) Bajar de Peso \n" + "(2) Tonificar/Definir \n" + "(3) Muscularte"));
 }
 while(tipoEntrenamiento != 1 && tipoEntrenamiento != 2 && tipoEntrenamiento != 3);
+*/
+
+
 
 // Devolución al usuario de rutina elegida de acuerdo a objetivo e intensidad
 let rutinaElegida = obtenerRutina(intensidadEntrenamiento, tipoEntrenamiento);
@@ -296,11 +313,13 @@ const contenedorrutImpresa = document.getElementById("rutinasImpresas");
 contenedorrutImpresa.innerHTML = JSON.stringify(rutinaElegida);
 
 // HTML de la página de Training a partir de JS (DOM)
-
+/*
 const contenedorrutinasTraining = document.getElementById("rutinasTraining");
 const generadorRutinas = document.createElement("article");
-
+*/
 // titulo ingresado por js
+
+/*
 const contenido = {
     titulo: "Generador de Rutinas",
     texto: "Complete el formulario y genere una rutina personalizada de acuerdo a sus necesidades"
@@ -314,3 +333,19 @@ generadorRutinas.innerHTML = `
                 `;
 
 contenedorrutinasTraining.appendChild(generadorRutinas);
+
+*/
+
+//modal con la rutina
+
+const generarRutina = document.getElementById("generarRutina")
+const cerrarRutina = document.getElementById("cerrarRutina")
+const modalContainerRutinas = document.getElementsByClassName("modalContainerRutinas")[0]
+
+generarRutina.addEventListener("click", () =>{
+modalContainerRutinas.classList.add("generarRutina")
+})
+
+cerrarRutina.addEventListener("click", () =>{
+    modalContainerRutinas.classList.remove("generarRutina")
+})
