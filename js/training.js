@@ -190,19 +190,6 @@ usuario = new Usuario(
     document.getElementById("esDeportista").value
 );
 
-/*
-//  FUNCIÓN PARA PEDIR LOS DATOS PERSONALES EN BASE A CLASS USUARIO
-function pedirDatosPersonales(){
-    usuario = new Usuario(prompt("Ingrese su nombre y apellido"), 
-        prompt("Ingrese su edad"),
-        prompt("Ingrese su altura en metros separada por un punto (.)"),
-        prompt("Ingrese su peso en kg"),
-        prompt("¿Es usted deportista? Si / No")
-    );
-
-    usuario.mostrarDatosUsuario();
-}
-*/
 // CÁLCULO IMC PARA QUIEN NO ES DEPORTISTA
 function mostrarResultadoIMC(resultadoIMC){
     alert("Analizamos tus datos para obtener tu índice de masa corporal, para poder asesorarte mejor sobre que rutina deberías generar luego. Tu IMC es: " + resultadoIMC);
@@ -256,96 +243,62 @@ function obtenerRutina(intensidadEntrenamiento, tipoEntrenamiento){
     }
 }
 
-// ACÁ COMIENZA LA INTERACCIÓN CON EL USUARIO DEL SIMULADOR
-// ACÁ COMIENZA LA INTERACCIÓN CON EL USUARIO DEL SIMULADOR
-// ACÁ COMIENZA LA INTERACCIÓN CON EL USUARIO DEL SIMULADOR
-
-
-
-
-/*
-alert("Bienvenido a Fitness Life, a continuación le solicitaremos algunos datos personales:");
-
-// Si el usuario igresa mal sus datos, se le solicitará nuevamente que los ingrese hasta que lo haga bien
-
-while(datosUsuario == respuestaNegativa || datosUsuario === undefined){
-    pedirDatosPersonales ();
-    datosUsuario = prompt("¿Éstos datos son correctos? \n" + "Si / No").toLowerCase();
-    if (datosUsuario == respuestaPositiva){
-        //Si la persona es deportista el IMC va a arrojar valores inútiles por eso no se tomaría en cuenta el dato si la persona responde que SI
-        if (!usuario.esDeportista){
-            mostrarResultadoIMC(usuario.calcularIndiceMasa());
-        }
-        else if (usuario.esDeportista){
-            alert("Por favor genere su rutina de acuerdo a su objetivo e intensidad de entrenamiento habitual.");
-        }
-    }
-    else if (datosUsuario == respuestaNegativa){
-        alert("Por favor ingrese nuevamente sus datos");
-    }
-}
-*/
-
-
-
-/*
-//Acá empiezan las rutinas acorde a las preferencias que elige el usuario, que pueden o no basarse en las recomendaciones arrojadas por el IMC
-do {
-    intensidadEntrenamiento = parseInt(prompt("¿Cuál es el nivel de entrenamiento que querés tener?: \n" + "Indicá con un número según corresponda \n" + "(1) Bajo \n" + "(2) Moderado \n" + "(3) Intenso"));
-}
-while(intensidadEntrenamiento != 1 && intensidadEntrenamiento != 2 && intensidadEntrenamiento != 3);
-
-do {
-    tipoEntrenamiento = parseInt(prompt("¿Cuál es tu objetivo?: \n" + "Indicá con un número según corresponda \n" + "(1) Bajar de Peso \n" + "(2) Tonificar/Definir \n" + "(3) Muscularte"));
-}
-while(tipoEntrenamiento != 1 && tipoEntrenamiento != 2 && tipoEntrenamiento != 3);
-*/
-
-
-
-// Devolución al usuario de rutina elegida de acuerdo a objetivo e intensidad
+//Devolución al usuario de rutina elegida de acuerdo a objetivo e intensidad
 let rutinaElegida = obtenerRutina(intensidadEntrenamiento, tipoEntrenamiento);
-rutinaElegida.usuario = usuario;
+//rutinaElegida.usuario = usuario;
 
-// Imprime en el HTML la Rutina que le devuelve al usuario según lo solicitado por PROMPT
-
-const contenedorrutImpresa = document.getElementById("rutinasImpresas");
-contenedorrutImpresa.innerHTML = JSON.stringify(rutinaElegida);
 
 // HTML de la página de Training a partir de JS (DOM)
-/*
+
 const contenedorrutinasTraining = document.getElementById("rutinasTraining");
 const generadorRutinas = document.createElement("article");
-*/
+
 // titulo ingresado por js
 
-/*
-const contenido = {
+const contenidoSuperior = {
     titulo: "Generador de Rutinas",
     texto: "Complete el formulario y genere una rutina personalizada de acuerdo a sus necesidades"
 };
 
 generadorRutinas.innerHTML = `
                     <div class= "text-center">
-                    <h1>${contenido.titulo}</h1>
-                    <p>${contenido.texto}</p>
+                    <h1>${contenidoSuperior.titulo}</h1>
+                    <p>${contenidoSuperior.texto}</p>
                     </div>
                 `;
 
 contenedorrutinasTraining.appendChild(generadorRutinas);
 
-*/
-
 //modal con la rutina
 
-const generarRutina = document.getElementById("generarRutina")
+const abrirModalDeRutina = document.getElementById("generarRutina")
 const cerrarRutina = document.getElementById("cerrarRutina")
 const modalContainerRutinas = document.getElementsByClassName("modalContainerRutinas")[0]
 
-generarRutina.addEventListener("click", () =>{
-modalContainerRutinas.classList.add("generarRutina")
+abrirModalDeRutina.addEventListener("click", () =>{
+modalContainerRutinas.classList.toggle("modalRutinasActive")
 })
 
 cerrarRutina.addEventListener("click", () =>{
-    modalContainerRutinas.classList.remove("generarRutina")
+    modalContainerRutinas.classList.toggle("modalRutinasActive")
 })
+
+
+///// Intento de imprimir la rutina
+
+const modalConRutinaElegida = document.getElementById("rutinaElegidaImpresa");
+const rutinaImpresa = document.createElement("article");
+
+const contenido = {
+    titulo: "Esta es tu rutina",
+    texto: "Esta rutina pertenece a " + usuario + "\n" + "De acuerdo al objetivo de entrenamiento: " + tipoEntrenamiento + " y a la intensidad que elegiste: " + intensidadEntrenamiento + " tu rutina es: " + "\n" + rutinaElegida,
+};
+
+rutinaElegidaImpresa.innerHTML = `
+                    <div class= "text-center">
+                    <h1>${contenido.titulo}</h1>
+                    <p>${contenido.texto}</p>
+                    </div>
+                `;
+
+modalConRutinaElegida.appendChild(rutinaImpresa);
