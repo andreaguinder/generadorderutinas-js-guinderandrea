@@ -181,14 +181,7 @@ let rutina9 = new PlanillaRutina(usuario, [jornada2, jornada8, jornada9, jornada
 // SE DEFINEN LAS FUNCIONES DEL SIMULADOR
 // SE DEFINEN LAS FUNCIONES DEL SIMULADOR
 
-// Obtengo el usuario
-usuario = new Usuario(
-    document.getElementById("nombreUsuario").value,
-    document.getElementById("edadUsuario").value,
-    document.getElementById("alturaUsuario").value,
-    document.getElementById("pesoUsuario").value,
-    document.getElementById("esDeportista").value
-);
+
 
 // CÁLCULO IMC PARA QUIEN NO ES DEPORTISTA
 function mostrarResultadoIMC(resultadoIMC){
@@ -207,6 +200,25 @@ function mostrarResultadoIMC(resultadoIMC){
     }
 }
 
+
+
+function imprimirRutina(){
+    const rutinaImpresa = document.createElement("article");
+
+    const contenido = {
+        titulo: "Esta es tu rutina",
+        texto: "Usuario: " + usuario.nombre + " <br>"+ "Edad: " + usuario.edad + " años" + "<br>" +  "Altura: " + usuario.altura + " metros" + "<br>" + "Peso: " + usuario.peso + " kilos"  + "<br>" + "Objetivo de entrenamiento: " + tipoEntrenamiento + "\n" + "Intensidad de Entrenamiento: " + intensidadEntrenamiento + "<br>" + " Tu rutina es: " + "<br>",
+    };
+
+    rutinaImpresa.innerHTML = `
+                    <div class= "text-center">
+                    <h1>${contenido.titulo}</h1>
+                    <p>${contenido.texto}</p>
+                    </div>
+                `;
+
+    modalConRutinaElegida.appendChild(rutinaImpresa);
+}
 
 
 // SE LE PREGUNTA AL USUARIO CON QUE NIVEL DE INTENSIDAD QUIERE ENTRENAR Y CUÁL ES SU OBJETIVO
@@ -244,7 +256,8 @@ function obtenerRutina(intensidadEntrenamiento, tipoEntrenamiento){
 }
 
 //Devolución al usuario de rutina elegida de acuerdo a objetivo e intensidad
-let rutinaElegida = obtenerRutina(intensidadEntrenamiento, tipoEntrenamiento);
+
+//let rutinaElegida = obtenerRutina(intensidadEntrenamiento, tipoEntrenamiento).value;
 //rutinaElegida.usuario = usuario;
 
 
@@ -274,31 +287,33 @@ contenedorrutinasTraining.appendChild(generadorRutinas);
 const abrirModalDeRutina = document.getElementById("generarRutina")
 const cerrarRutina = document.getElementById("cerrarRutina")
 const modalContainerRutinas = document.getElementsByClassName("modalContainerRutinas")[0]
+const modalConRutinaElegida = document.getElementById("rutinaElegidaImpresa");
 
-abrirModalDeRutina.addEventListener("click", () =>{
-modalContainerRutinas.classList.toggle("modalRutinasActive")
-})
+
+function crearUsuario(){
+    // Obtengo el usuario
+    usuario = new Usuario(
+        document.getElementById("nombreUsuario").value,
+        document.getElementById("edadUsuario").value,
+        document.getElementById("alturaUsuario").value,
+        document.getElementById("pesoUsuario").value,
+        document.getElementById("esDeportista").value
+    );
+    console.log(usuario);
+    console.log(usuario.nombre);
+    console.log(usuario.edad);
+    console.log(usuario.altura);
+    console.log(usuario.peso);
+    console.log(usuario.esDeportista);    
+}
 
 cerrarRutina.addEventListener("click", () =>{
     modalContainerRutinas.classList.toggle("modalRutinasActive")
 })
 
-
-///// Intento de imprimir la rutina
-
-const modalConRutinaElegida = document.getElementById("rutinaElegidaImpresa");
-const rutinaImpresa = document.createElement("article");
-
-const contenido = {
-    titulo: "Esta es tu rutina",
-    texto: "Esta rutina pertenece a " + usuario + "\n" + "De acuerdo al objetivo de entrenamiento: " + tipoEntrenamiento + " y a la intensidad que elegiste: " + intensidadEntrenamiento + " tu rutina es: " + "\n" + rutinaElegida,
-};
-
-rutinaElegidaImpresa.innerHTML = `
-                    <div class= "text-center">
-                    <h1>${contenido.titulo}</h1>
-                    <p>${contenido.texto}</p>
-                    </div>
-                `;
-
-modalConRutinaElegida.appendChild(rutinaImpresa);
+abrirModalDeRutina.addEventListener("click", (e) =>{
+    e.preventDefault();
+    crearUsuario();
+    imprimirRutina();
+    modalContainerRutinas.classList.toggle("modalRutinasActive")
+})
