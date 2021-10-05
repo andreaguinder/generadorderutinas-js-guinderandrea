@@ -207,7 +207,7 @@ function imprimirRutina(){
 
     const contenido = {
         titulo: "Esta es tu rutina",
-        texto: "Usuario: " + usuario.nombre + " <br>"+ "Edad: " + usuario.edad + " años" + "<br>" +  "Altura: " + usuario.altura + " metros" + "<br>" + "Peso: " + usuario.peso + " kilos"  + "<br>" + "Objetivo de entrenamiento: " + tipoEntrenamiento + "\n" + "Intensidad de Entrenamiento: " + intensidadEntrenamiento + "<br>" + " Tu rutina es: " + "<br>",
+        texto: "Usuario: " + usuario.nombre + " <br>"+ "Edad: " + usuario.edad + " años" + "<br>" +  "Altura: " + usuario.altura + " metros" + "<br>" + "Peso: " + usuario.peso + " kilos"  + "<br>" + "Objetivo de entrenamiento: " + tipoEntrenamiento + "<br>" + "Intensidad de Entrenamiento: " + intensidadEntrenamiento + "<br>" + " Tu rutina es: " + "<br>",
     };
 
     rutinaImpresa.innerHTML = `
