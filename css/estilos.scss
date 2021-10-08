@@ -177,9 +177,11 @@ fieldset{
     height: 100vh;
     width: 100vw;
     background-color: $color6;
+    background-size: contain;
     position: fixed;
     top: 0;
     left: 0;
+
 
     display: flex;
     justify-content: center;
@@ -201,13 +203,24 @@ fieldset{
     background-color: $color3;
     width: 95%;
     height: 95%;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     text-align: center;
     padding: 1rem;
     margin: auto;
+    overflow-y: scroll;
 }
 
+.modalRutinas::-webkit-scrollbar{
+    width: 0.5rem;
 
+    background-color: $color2;
+    border-radius: 3rem;
+}
+
+.modalRutinas::-webkit-scrollbar-thumb{
+    background-color: $color7;
+    border-radius: 3rem;
+}
 /*-------------------INDEX---------------*/
 
 .container__actividad{

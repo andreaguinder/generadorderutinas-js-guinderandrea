@@ -14,12 +14,14 @@ let datosUsuario;
 
 // SE DEFINEN LOS DATOS QUE SE VAN A ADQUIRIR DEL USUARIO
 class Usuario {
-    constructor(nombre, edad, altura, peso, esDeportista) {
+    constructor(nombre, edad, altura, peso, esDeportista, intensidadEntrenamiento, tipoEntrenamiento) {
         this.nombre = nombre;
         this.edad = parseInt(edad);
         this.altura = parseFloat(altura);
         this.peso = parseInt(peso);
         this.esDeportista = (esDeportista.toLowerCase() === "si") ? true : false;
+        this.intensidadEntrenamiento = intensidadEntrenamiento;
+        this.tipoEntrenamiento = tipoEntrenamiento;
     }
     mostrarDatosUsuario(){
         alert("Usted ingresó: \n" + "Nombre y Apellido: " + this.nombre + " \n" + "Edad: " + this.edad + " años \n" + "Tu altura: " + this.altura + " m. \n" + "Tu peso: " + this.peso + " kg. \n" + "Es deportista: " + ((this.esDeportista) ? "si" : "no"));
@@ -207,7 +209,7 @@ function imprimirRutina(){
 
     const contenido = {
         titulo: "Esta es tu rutina",
-        texto: "Usuario: " + usuario.nombre + " <br>"+ "Edad: " + usuario.edad + " años" + "<br>" +  "Altura: " + usuario.altura + " metros" + "<br>" + "Peso: " + usuario.peso + " kilos"  + "<br>" + "Objetivo de entrenamiento: " + tipoEntrenamiento + "<br>" + "Intensidad de Entrenamiento: " + intensidadEntrenamiento + "<br>" + " Tu rutina es: " + "<br>",
+        texto: "Usuario: " + usuario.nombre + " <br>"+ "Edad: " + usuario.edad + " años" + "<br>" +  "Altura: " + usuario.altura + " metros" + "<br>" + "Peso: " + usuario.peso + " kilos"  + "<br>" +  "Intensidad de Entrenamiento: " + usuario.intensidadEntrenamiento + "<br>" + "Objetivo de entrenamiento: " + usuario.tipoEntrenamiento + "<br><br>" + " Tu rutina es: " + rutinaElegida + "<br>",
     };
 
     rutinaImpresa.innerHTML = `
@@ -220,45 +222,33 @@ function imprimirRutina(){
     modalConRutinaElegida.appendChild(rutinaImpresa);
 }
 
-
-// SE LE PREGUNTA AL USUARIO CON QUE NIVEL DE INTENSIDAD QUIERE ENTRENAR Y CUÁL ES SU OBJETIVO
-/*
-function preferenciaEntrenamiento(){
-    intensidadEntrenamiento = parseInt(prompt("¿Cuál es el nivel de entrenamiento que querés tener?: \n" + "Indicá con un número según corresponda \n" + "(1) Bajo \n" + "(2) Moderado \n" + "(3) Intenso"));
-    
-    tipoEntrenamiento = parseInt(prompt("¿Cuál es tu objetivo?: \n" + "Indicá con un número según corresponda \n" + "(1) Bajar de Peso \n" + "(2) Tonificar/Definir \n" + "(3) Muscularte"));
-}
-*/
-
-
 // FUNCIÓN QUE LE DEVOLVERÁ AL USUARIO LA RUTINA CREADA POR EL SIMULADOR
 function obtenerRutina(intensidadEntrenamiento, tipoEntrenamiento){
 
-    if(intensidadEntrenamiento === 1 && tipoEntrenamiento === 1){
+    if(intensidadEntrenamiento === "Baja" && tipoEntrenamiento === "Bajar de Peso"){
         return rutina1;
-    } else if(intensidadEntrenamiento === 1 && tipoEntrenamiento === 2){
+    } else if(intensidadEntrenamiento === "Baja" && tipoEntrenamiento === "Tonificar/Definir"){
         return rutina2;
-    } else if(intensidadEntrenamiento === 1 && tipoEntrenamiento === 3){
+    } else if(intensidadEntrenamiento === "Baja" && tipoEntrenamiento === "Muscularse"){
         return rutina3;
-    } else if(intensidadEntrenamiento === 2 && tipoEntrenamiento === 1){
+    } else if(intensidadEntrenamiento === "Moderada" && tipoEntrenamiento === "Bajar de Peso"){
         return rutina4;
-    } else if(intensidadEntrenamiento === 2 && tipoEntrenamiento === 2){
+    } else if(intensidadEntrenamiento === "Moderada" && tipoEntrenamiento === "Tonificar/Definir"){
         return rutina5;
-    } else if(intensidadEntrenamiento === 2 && tipoEntrenamiento === 3){
+    } else if(intensidadEntrenamiento === "Moderada" && tipoEntrenamiento === "Muscularse"){
         return rutina6;
-    } else if(intensidadEntrenamiento === 3 && tipoEntrenamiento === 1){
+    } else if(intensidadEntrenamiento === "Intensa" && tipoEntrenamiento === "Bajar de Peso"){
         return rutina7;
-    } else if(intensidadEntrenamiento === 3 && tipoEntrenamiento === 2){
+    } else if(intensidadEntrenamiento === "Intensa" && tipoEntrenamiento === "Tonificar/Definir"){
         return rutina8;
-    } else if(intensidadEntrenamiento === 3 && tipoEntrenamiento === 3){
+    } else if(intensidadEntrenamiento === "Intensa" && tipoEntrenamiento === "Muscularse"){
         return rutina9;
     }
 }
 
 //Devolución al usuario de rutina elegida de acuerdo a objetivo e intensidad
 
-//let rutinaElegida = obtenerRutina(intensidadEntrenamiento, tipoEntrenamiento).value;
-//rutinaElegida.usuario = usuario;
+let rutinaElegida = obtenerRutina();
 
 
 // HTML de la página de Training a partir de JS (DOM)
@@ -297,7 +287,9 @@ function crearUsuario(){
         document.getElementById("edadUsuario").value,
         document.getElementById("alturaUsuario").value,
         document.getElementById("pesoUsuario").value,
-        document.getElementById("esDeportista").value
+        document.getElementById("esDeportista").value,
+        document.getElementById("intensidadEntrenamiento").value,
+        document.getElementById("tipoEntrenamiento").value
     );
     console.log(usuario);
     console.log(usuario.nombre);
@@ -305,6 +297,8 @@ function crearUsuario(){
     console.log(usuario.altura);
     console.log(usuario.peso);
     console.log(usuario.esDeportista);    
+    console.log(usuario.intensidadEntrenamiento);
+    console.log(usuario.tipoEntrenamiento);
 }
 
 cerrarRutina.addEventListener("click", () =>{
@@ -315,5 +309,6 @@ abrirModalDeRutina.addEventListener("click", (e) =>{
     e.preventDefault();
     crearUsuario();
     imprimirRutina();
+
     modalContainerRutinas.classList.toggle("modalRutinasActive")
 })
