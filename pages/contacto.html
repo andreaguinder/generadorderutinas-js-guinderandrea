@@ -47,17 +47,13 @@
         </div>
 
         </header>
-        <main>
+        <main class="mainSpace">
+
+            <section id="formularioContacto" class="text-center">
+            </section>
+
             <form class="form__contact p-3">
                 <fieldset class="p-3">
-                <div>
-                    <h1>¿Te interesa empezar con alguna de nuestras actividades?</h1>
-                    <h2>Registrate en el formulario por cualquier consulta o para recibir novedades </h2>
-                    <div id="iconos__redes">
-                    <a target="_blank" href=" "><i class="fab fa-facebook"></i></a>
-                    <a target="_blank" href=" "><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
                 <div>
                     <div class="mb-3">
                         <label for="nombre" class="form-label align-content-sm-start col-form-label-sm">Nombre y Apellido</label>
@@ -72,7 +68,7 @@
                         <input type="text" class="form-control bg-white text-dark btn-secondary" id="emailUsuario" placeholder="juanperez@gmail.com" name="email" required>
                     </div><br>
                             <div class="form__elegir">
-                                <label for="actividad">Deseo recibir información sobre:</label><br>
+                                <label for="actividad">Deseo recibir información sobre:</label><br><br>
                                 <label for="running">Indoor Running</label>
                                 <input type="radio" name="actividad" id="running" value="Indoor Running" required checked>
                                 <label for="spinning">Spinning</label>
@@ -83,23 +79,28 @@
                                 <input type="radio" name="actividad" id="musculacion" value="Musculación" required>
                             </div>
                             <br>
-                            <label for="mensaje">Consulta:</label><br>
-                            <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Escriba su consulta aquí..." required></textarea><br>
+                            <div class="mb-3">
+                                <label for="mensaje" class="form-label col-form-label-sm">Consulta</label>
+                                <textarea class="form-control bg-white text-dark btn-secondary" placeholder="Quisiera información sobre..." id="mensaje" rows="3" name="mensaje"></textarea>
+                            </div>
                             <br>
                             <label for="recibir__novedades">Quiero recibir novedades y promociones</label>
                             <input type="checkbox" name="recibir__novedades" id="recibir__novedades" value="first_checkbox"><br>
-                            <br>
                             <label for="botones__formulario"></label>
-                            <input type="reset" name="botones__formulario" id="Restablecer" value="Restablecer">
-                            <input type="submit" name="botones__formulario" id="Enviar" value="Enviar"><br>
+                            <div class="text-center p-2">
+                            <input type="reset" name="botones__formulario" id="Restablecer" value="Restablecer" class="btnGym m-1">
+                            <input type="submit" name="botones__formulario" id="Enviar" value="Enviar" class="btnGym m-1"><br>
                         </fieldset>
                     </form>
                 </div>
             </section>
-
-
-
-                </main>
-<script src="/js/practica.js"></script>
+            <div>
+                <div id="iconos__redes">
+                <a target="_blank" href=" "><i class="fab fa-facebook"></i></a>
+                <a target="_blank" href=" "><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </main>
+<script src="/js/contacto.js"></script>
 </body>
 </html>

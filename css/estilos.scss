@@ -19,7 +19,7 @@ ul, ol {
 
 /*----Menú de Navegación Big Screens----*/
 
-header{/////////
+header{
     background-image: url(../images/fondo-headerrrr2.jpg);
     background-repeat: no-repeat;
     background-position: cover;
@@ -27,7 +27,7 @@ header{/////////
     width: 100%;
 }
 
-#logo__superior{////
+#logo__superior{
     background-position-y: 25%;
     background-position-x: center;
     background-image: url(../images/logo-life-sombreado.png);
@@ -84,7 +84,6 @@ header{/////////
     border-radius: 0.5rem;
     background-position-x: center;
     text-decoration: none;
-
 }
 
 .btnGym:hover{
@@ -315,6 +314,10 @@ fieldset{
 
     #menu__nav--responsive{
         display: none;
+    }
+
+    .mainSpace{
+        margin-top: -5rem;
     }
 }
 

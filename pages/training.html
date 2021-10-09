@@ -47,7 +47,7 @@
         </div>
 
         </header>
-                <main>
+                <main class>
                     <section id="rutinasTraining" class="text-center">
                     </section>
 
@@ -71,11 +71,24 @@
                             <label for="peso" class="form-label col-form-label-sm">Peso</label>
                             <input type="text" class="form-control bg-white text-dark btn-secondary" id="pesoUsuario" placeholder="Escribir en kg. separado por un punto (.)" name="peso" required>
                         </div>
+
+                        
+
                         <div class="mb-3">
                             <label for="esDeportista" class="form-label col-form-label-sm">¿Es usted Deportista?</label>
                             <input type="text" class="form-control bg-white text-dark btn-secondary" id="esDeportista" placeholder="Escribir Si o No" name="esDeportista" required>
                         </div>
-                        
+
+
+                        <div class="mb-3">
+                            <div class="form__elegir">
+                                <label for="actdeportistas" id="esDeportista">¿Es usted deportista?</label>
+                                <label for="actividad">SI</label>
+                                <input type="radio" name="deportista" id="si" value="si" required checked>
+                                <label for="actividad">NO</label>
+                                <input type="radio" name="deportista" id="no" value="no" required>
+                            </div>
+                        </div>
                         <!----------------El usuario elige que cantidad de días y que objetivo tiene-------------->
                         <p>Intensidad de Entrenamiento</p>
                         <select name="intensidadEntrenamiento" id="intensidadEntrenamiento">
