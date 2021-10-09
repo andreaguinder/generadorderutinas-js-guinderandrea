@@ -1,4 +1,4 @@
-// HTML de la página de Training a partir de JS (DOM)
+// HTML de la página de Contacto a partir de JS (DOM)
 
 const contenedorformularioContacto = document.getElementById("formularioContacto");
 const formularioContacto = document.createElement("article");
@@ -17,4 +17,20 @@ formularioContacto.innerHTML = `
                     </div>
                 `;
 
+
 contenedorformularioContacto.appendChild(formularioContacto);
+
+// Modal cuando la persona toca Enviar
+
+const abrirModalDeRutina = document.getElementById("enviar")
+const cerrarRutina = document.getElementById("cerrarRutina")
+const modalContainerRutinas = document.getElementsByClassName("modalContainerRutinas")[0]
+
+abrirModalDeRutina.addEventListener("click", (e) =>{
+    e.preventDefault();
+    modalContainerRutinas.classList.toggle("modalRutinasActive")
+})
+
+cerrarRutina.addEventListener("click", () =>{
+    modalContainerRutinas.classList.toggle("modalRutinasActive")
+})

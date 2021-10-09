@@ -214,6 +214,17 @@ fieldset {
   border-radius: 3rem;
 }
 
+.modalForm {
+  color: black;
+  background-color: #ffffff;
+  background-size: contain;
+  width: 50%;
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 1rem;
+  margin: auto;
+}
+
 /*-------------------INDEX---------------*/
 .container__actividad {
   margin-top: -5rem;

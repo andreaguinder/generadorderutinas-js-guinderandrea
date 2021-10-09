@@ -310,7 +310,11 @@ function crearUsuario(){
         document.getElementById("alturaUsuario").value,
         document.getElementById("pesoUsuario").value,
         document.getElementById("esDeportista").value,
+
+
         document.getElementById("intensidadEntrenamiento").value,
+
+        
         document.getElementById("tipoEntrenamiento").value
     );
     console.log(usuario);
