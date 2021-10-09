@@ -120,24 +120,24 @@ let jornada3 = new Jornada("Funcional", "Cardio", listaEjerGeneral3);
 
 // Jornadas para Bajar de Peso
 let listaBajar1 = [ejercicio1, ejercicio2, ejercicio3];
-let jornada4 = new Jornada("Tren Superior", "Musculación/Tonificación", listaBajar1);
+let jornada4 = new Jornada("Integral", "Musculación/Tonificación", listaBajar1);
 
 let listaBajar2 = [ejercicio4, ejercicio5, ejercicio6];
-let jornada5 = new Jornada("Tren Inferior", "Musculación/Tonificación", listaBajar2);
+let jornada5 = new Jornada("Integral", "Musculación/Tonificación", listaBajar2);
 
 // Jornadas para Tonificar/Definir
 let listaDefinir1 = [ejercicio7, ejercicio8, ejercicio9];
-let jornada6 = new Jornada("Tren Superior", "Musculación/Tonificación", listaDefinir1);
+let jornada6 = new Jornada("Integral", "Musculación/Tonificación", listaDefinir1);
 
 let listaDefinir2 = [ejercicio10, ejercicio11, ejercicio12];
-let jornada7 = new Jornada("Tren Inferior", "Musculación/Tonificación", listaDefinir2);
+let jornada7 = new Jornada("Integral", "Musculación/Tonificación", listaDefinir2);
 
 // Jornadas para Muscular
 let listaMuscular1 = [ejercicio13, ejercicio14, ejercicio15];
-let jornada8 = new Jornada("Tren Superior", "Musculación/Tonificación", listaMuscular1);
+let jornada8 = new Jornada("Integral", "Musculación/Tonificación", listaMuscular1);
 
 let listaMuscular2 = [ejercicio16, ejercicio17, ejercicio18];
-let jornada9 = new Jornada("Tren Inferior", "Musculación/Tonificación", listaMuscular2);
+let jornada9 = new Jornada("Integral", "Musculación/Tonificación", listaMuscular2);
 
 
 // SE DEFINEN LAS RUTINAS POR DÍAS
@@ -204,53 +204,50 @@ function imprimirRutina(){
 
     const divRutina = document.createElement("div");
 
-    const divJornada = document.createElement("div");
+
 
     const contenido = {
-        titulo: "Esta es tu rutina",
-        texto: "Usuario: " + usuario.nombre + " <br>"+ "Edad: " + usuario.edad + " años" + "<br>" +  "Altura: " + usuario.altura + " metros" + "<br>" + "Peso: " + usuario.peso + " kilos"  + "<br>" +  "Intensidad de Entrenamiento: " + usuario.intensidadEntrenamiento + "<br>" + "Objetivo de entrenamiento: " + usuario.tipoEntrenamiento + "<br><br>" + " Tu rutina es: " + "<br>",
+        titulo: "Esta es tu rutina generada en Fitness Life",
+        texto: "Usuario: " + usuario.nombre + " <br>"+ "Edad: " + usuario.edad + " años" + "<br>" +  "Altura: " + usuario.altura + " metros" + "<br>" + "Peso: " + usuario.peso + " kilos"  + "<br>" +  "Intensidad de Entrenamiento: " + usuario.intensidadEntrenamiento + "<br>" + "Objetivo de entrenamiento: " + usuario.tipoEntrenamiento + "<br>" + "Cada jornada es un día de entrenamiento y estará compuesta por uno o más ejercicios." + "<br>",
     };
 
     rutinaImpresa.innerHTML = `
-                    <div class= "text-center">
-                    <h1>${contenido.titulo}</h1>
-                    <p>${contenido.texto}</p>
+                    <div>
+                    <h3 class= "text-center" style="color: rgb(7, 167, 153)">${contenido.titulo}</h3>
+                    <p style="text-align: left">${contenido.texto}</p>
                     </div>
                 `;
-
-
 
     rutinaElegida.jornadas.forEach(element => {
         const divJornada = document.createElement("div");
         divJornada.innerHTML= `
                                 <div>
-                                <h5>${element.nombreJornada}</h5>
-                                <p>${element.tipoJornada}</p>
-                                <p>${element.listaDeEjercicios}</p>
+                                <p>__________________________</p>
+                                <h6>Nombre de la Jornada: ${element.nombreJornada}</h6>
+                                <p>En este tipo de jornada se trabaja: ${element.tipoJornada}</p>
                                 </div>
                                 `;
                 divRutina.appendChild(divJornada);
+        
 
-        rutinaElegida.ejercicios.forEach(element => {
+        element.listaDeEjercicios.forEach(element => {
             const divEjercicio = document.createElement("div");
             divEjercicio.innerHTML= `
-                                    <div>
-                                    <h5>${element.nombreEjercicio}</h5>
-                                    <p>"Cantidad de Series: " ${element.cantSeries}</p>
-                                    <p>"Cantidad de Repeticiones: " ${element.cantRepeticiones}</p>
+                                    <div style="text-align: left">
+                                    <h6>Nombre del ejercicio: ${element.nombreEjercicio}</h6>
+                                    <p>Cantidad de Series o duración: ${element.cantSeries}</p>
+                                    <p>Cantidad de Repeticiones o duración: ${element.cantRepeticiones}</p>
                                     </div>
                                     `;
                 divRutina.appendChild(divEjercicio);
     
 
         });
-    });
-
 
     modalConRutinaElegida.appendChild(rutinaImpresa);
     modalConRutinaElegida.appendChild(divRutina);
-}
-
+    }
+    )}
 // FUNCIÓN QUE LE DEVOLVERÁ AL USUARIO LA RUTINA CREADA POR EL SIMULADOR
 function obtenerRutina(intensidadEntrenamiento, tipoEntrenamiento){
 

@@ -59,7 +59,7 @@ actividadesGym.forEach((actGym) => {
         contenedorDescripcion.innerHTML = `
         
         <div>
-            <h5>${actGym.nombreActGym}</h5>
+            <h3 style= "color: rgb(7, 167, 153)"><strong>${actGym.nombreActGym}</strong></h3>
             <br>
             <img src="${actGym.img}" class="img-fluid"><br><br>
             <p style="text-align:left">${actGym.actDescripcion}</p>
