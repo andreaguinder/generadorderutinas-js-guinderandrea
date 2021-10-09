@@ -48,7 +48,8 @@
 
         </header>
         <main>
-            <section id="form__contact" class="contenedor">
+            <form class="form__contact p-3">
+                <fieldset class="p-3">
                 <div>
                     <h1>¿Te interesa empezar con alguna de nuestras actividades?</h1>
                     <h2>Registrate en el formulario por cualquier consulta o para recibir novedades </h2>
@@ -58,16 +59,18 @@
                     </div>
                 </div>
                 <div>
-                    <form>
-                        <fieldset>
-                        <legend class="container__form container">¡CONTACTANOS!</legend>
-                            <label for="nombreApellido"> Nombre y Apellido:  </label>
-                            <input type="text" name="nombreApellido" id="nombreApellido" placeholder="Juan Perez" required><br>
-                            <label for="tel">Teléfono:</label>
-                            <input type="text" name="tel" id="tel" placeholder="+542284526272" required><br>
-                            <label for="email">Email:</label>
-                            <input type="text" name="email" id="email" placeholder="juanperez@gmail.com" required><br>
-                            <br>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label align-content-sm-start col-form-label-sm">Nombre y Apellido</label>
+                        <input type="text" class="form-control bg-white text-dark btn-secondary" id="nombreUsuario" placeholder="Juan Perez" name="nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tel" class="form-label align-content-sm-start col-form-label-sm">Teléfono</label>
+                        <input type="text" class="form-control bg-white text-dark btn-secondary" id="telUsuario" placeholder="(+54) 11 6875 5982" name="tel" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label align-content-sm-start col-form-label-sm">E-mail</label>
+                        <input type="text" class="form-control bg-white text-dark btn-secondary" id="emailUsuario" placeholder="juanperez@gmail.com" name="email" required>
+                    </div><br>
                             <div class="form__elegir">
                                 <label for="actividad">Deseo recibir información sobre:</label><br>
                                 <label for="running">Indoor Running</label>

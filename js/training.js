@@ -1,10 +1,8 @@
 // SE DEFINEN LAS VARIABLES DE JS
 let esDeportista;
-
-let intensidadEntrenamiento;
-let tipoEntrenamiento;
 let usuario;
 let datosUsuario;
+let rutinaElegida;
 
 
 // SE DEFINEN LAS CLASES DEL SIMULADOR: GENERADOR DE RUTINAS
@@ -22,9 +20,6 @@ class Usuario {
         this.esDeportista = (esDeportista.toLowerCase() === "si") ? true : false;
         this.intensidadEntrenamiento = intensidadEntrenamiento;
         this.tipoEntrenamiento = tipoEntrenamiento;
-    }
-    mostrarDatosUsuario(){
-        alert("Usted ingresó: \n" + "Nombre y Apellido: " + this.nombre + " \n" + "Edad: " + this.edad + " años \n" + "Tu altura: " + this.altura + " m. \n" + "Tu peso: " + this.peso + " kg. \n" + "Es deportista: " + ((this.esDeportista) ? "si" : "no"));
     }
 
     calcularIndiceMasa(){
@@ -207,9 +202,13 @@ function mostrarResultadoIMC(resultadoIMC){
 function imprimirRutina(){
     const rutinaImpresa = document.createElement("article");
 
+    const divRutina = document.createElement("div");
+
+    const divJornada = document.createElement("div");
+
     const contenido = {
         titulo: "Esta es tu rutina",
-        texto: "Usuario: " + usuario.nombre + " <br>"+ "Edad: " + usuario.edad + " años" + "<br>" +  "Altura: " + usuario.altura + " metros" + "<br>" + "Peso: " + usuario.peso + " kilos"  + "<br>" +  "Intensidad de Entrenamiento: " + usuario.intensidadEntrenamiento + "<br>" + "Objetivo de entrenamiento: " + usuario.tipoEntrenamiento + "<br><br>" + " Tu rutina es: " + rutinaElegida + "<br>",
+        texto: "Usuario: " + usuario.nombre + " <br>"+ "Edad: " + usuario.edad + " años" + "<br>" +  "Altura: " + usuario.altura + " metros" + "<br>" + "Peso: " + usuario.peso + " kilos"  + "<br>" +  "Intensidad de Entrenamiento: " + usuario.intensidadEntrenamiento + "<br>" + "Objetivo de entrenamiento: " + usuario.tipoEntrenamiento + "<br><br>" + " Tu rutina es: " + "<br>",
     };
 
     rutinaImpresa.innerHTML = `
@@ -219,7 +218,37 @@ function imprimirRutina(){
                     </div>
                 `;
 
+
+
+    rutinaElegida.jornadas.forEach(element => {
+        const divJornada = document.createElement("div");
+        divJornada.innerHTML= `
+                                <div>
+                                <h5>${element.nombreJornada}</h5>
+                                <p>${element.tipoJornada}</p>
+                                <p>${element.listaDeEjercicios}</p>
+                                </div>
+                                `;
+                divRutina.appendChild(divJornada);
+
+        rutinaElegida.ejercicios.forEach(element => {
+            const divEjercicio = document.createElement("div");
+            divEjercicio.innerHTML= `
+                                    <div>
+                                    <h5>${element.nombreEjercicio}</h5>
+                                    <p>"Cantidad de Series: " ${element.cantSeries}</p>
+                                    <p>"Cantidad de Repeticiones: " ${element.cantRepeticiones}</p>
+                                    </div>
+                                    `;
+                divRutina.appendChild(divEjercicio);
+    
+
+        });
+    });
+
+
     modalConRutinaElegida.appendChild(rutinaImpresa);
+    modalConRutinaElegida.appendChild(divRutina);
 }
 
 // FUNCIÓN QUE LE DEVOLVERÁ AL USUARIO LA RUTINA CREADA POR EL SIMULADOR
@@ -245,10 +274,6 @@ function obtenerRutina(intensidadEntrenamiento, tipoEntrenamiento){
         return rutina9;
     }
 }
-
-//Devolución al usuario de rutina elegida de acuerdo a objetivo e intensidad
-
-let rutinaElegida = obtenerRutina();
 
 
 // HTML de la página de Training a partir de JS (DOM)
@@ -308,6 +333,11 @@ cerrarRutina.addEventListener("click", () =>{
 abrirModalDeRutina.addEventListener("click", (e) =>{
     e.preventDefault();
     crearUsuario();
+
+    
+//Devolución al usuario de rutina elegida de acuerdo a objetivo e intensidad
+
+    rutinaElegida = obtenerRutina(usuario.intensidadEntrenamiento, usuario.tipoEntrenamiento);
     imprimirRutina();
 
     modalContainerRutinas.classList.toggle("modalRutinasActive")
