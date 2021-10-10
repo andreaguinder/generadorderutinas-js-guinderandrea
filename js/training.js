@@ -17,7 +17,7 @@ class Usuario {
         this.edad = parseInt(edad);
         this.altura = parseFloat(altura);
         this.peso = parseInt(peso);
-        this.esDeportista = (esDeportista.toLowerCase() === "si") ? true : false;
+        this.esDeportista = (esDeportista === "si") ? true : false;
         this.intensidadEntrenamiento = intensidadEntrenamiento;
         this.tipoEntrenamiento = tipoEntrenamiento;
     }
@@ -178,26 +178,20 @@ let rutina9 = new PlanillaRutina(usuario, [jornada2, jornada8, jornada9, jornada
 // SE DEFINEN LAS FUNCIONES DEL SIMULADOR
 // SE DEFINEN LAS FUNCIONES DEL SIMULADOR
 
-
-
 // CÁLCULO IMC PARA QUIEN NO ES DEPORTISTA
 function mostrarResultadoIMC(resultadoIMC){
-    alert("Analizamos tus datos para obtener tu índice de masa corporal, para poder asesorarte mejor sobre que rutina deberías generar luego. Tu IMC es: " + resultadoIMC);
-
     if (resultadoIMC < 18.5){
-        alert("Te encontrás dentro del rango de peso insuficiente; visitá a tu médico o nutricionista y escribinos luego por una rutina personalizada");
+        return "Tu IMC es: " + resultadoIMC + "<br>Te encontrás dentro del rango de peso insuficiente; visitá a tu médico o nutricionista.";
     }
 
     else if (resultadoIMC >= 18.5 && resultadoIMC <= 24.9){
-        alert("Te encontrás en el rango de peso saludable; te recomendamos una rutina de mantenimiento de al menos 2 días a la semana.");
+        return "Tu IMC es: " + resultadoIMC + "<br>Te encontrás en el rango de peso saludable; te recomendamos una rutina de mantenimiento de al menos 2 días a la semana.";
     }
 
     else {
-        alert("Te encontrás dentro del rango de sobrepeso, te recomendamos consultar con un médico y realizar una rutina de al menos 5 días a la semana.");
+        return "Tu IMC es: " + resultadoIMC + "<br>Te encontrás dentro del rango de sobrepeso, te recomendamos consultar con un médico y realizar una rutina de al menos 5 días a la semana.";
     }
 }
-
-
 
 function imprimirRutina(){
     const rutinaImpresa = document.createElement("article");
@@ -208,7 +202,7 @@ function imprimirRutina(){
 
     const contenido = {
         titulo: "Esta es tu rutina generada en Fitness Life",
-        texto: "Usuario: " + usuario.nombre + " <br>"+ "Edad: " + usuario.edad + " años" + "<br>" +  "Altura: " + usuario.altura + " metros" + "<br>" + "Peso: " + usuario.peso + " kilos"  + "<br>" +  "Intensidad de Entrenamiento: " + usuario.intensidadEntrenamiento + "<br>" + "Objetivo de entrenamiento: " + usuario.tipoEntrenamiento + "<br>" + "Cada jornada es un día de entrenamiento y estará compuesta por uno o más ejercicios." + "<br>",
+        texto: "Usuario: " + usuario.nombre + " <br>"+ "Edad: " + usuario.edad + " años" + "<br>" +  "Altura: " + usuario.altura + " metros" + "<br>" + "Peso: " + usuario.peso + " kilos"  + "<br>" +  "Intensidad de Entrenamiento: " + usuario.intensidadEntrenamiento + "<br>" + "Objetivo de entrenamiento: " + usuario.tipoEntrenamiento + "<br>" + "Sos deportista: " + ((usuario.esDeportista) ? "Si" : "No") + "<br>" + ((!usuario.esDeportista) ? mostrarResultadoIMC(usuario.calcularIndiceMasa()) : "" ) + "<br><br>" + "Cada jornada es un día de entrenamiento y estará compuesta por uno o más ejercicios." + "<br>",
     };
 
     rutinaImpresa.innerHTML = `
@@ -244,6 +238,7 @@ function imprimirRutina(){
 
         });
 
+    mostrarResultadoIMC();
     modalConRutinaElegida.appendChild(rutinaImpresa);
     modalConRutinaElegida.appendChild(divRutina);
     }
@@ -301,7 +296,6 @@ const cerrarRutina = document.getElementById("cerrarRutina")
 const modalContainerRutinas = document.getElementsByClassName("modalContainerRutinas")[0]
 const modalConRutinaElegida = document.getElementById("rutinaElegidaImpresa");
 
-
 function crearUsuario(){
     // Obtengo el usuario
     usuario = new Usuario(
@@ -309,12 +303,8 @@ function crearUsuario(){
         document.getElementById("edadUsuario").value,
         document.getElementById("alturaUsuario").value,
         document.getElementById("pesoUsuario").value,
-        document.getElementById("esDeportista").value,
-
-
+        document.querySelector("input[name='esDeportista']:checked").value,
         document.getElementById("intensidadEntrenamiento").value,
-
-        
         document.getElementById("tipoEntrenamiento").value
     );
     console.log(usuario);
@@ -325,6 +315,7 @@ function crearUsuario(){
     console.log(usuario.esDeportista);    
     console.log(usuario.intensidadEntrenamiento);
     console.log(usuario.tipoEntrenamiento);
+    console.log(usuario.esDeportista);
 }
 
 cerrarRutina.addEventListener("click", () =>{
@@ -340,6 +331,7 @@ abrirModalDeRutina.addEventListener("click", (e) =>{
 
     rutinaElegida = obtenerRutina(usuario.intensidadEntrenamiento, usuario.tipoEntrenamiento);
     imprimirRutina();
-
     modalContainerRutinas.classList.toggle("modalRutinasActive")
+
+    localStorage.setItem("rutinaElegida", JSON.stringify(rutinaElegida));
 })
