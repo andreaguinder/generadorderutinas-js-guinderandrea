@@ -194,6 +194,8 @@ function mostrarResultadoIMC(resultadoIMC){
 }
 
 function imprimirRutina(){
+    rutinaElegida = JSON.parse(localStorage.getItem("rutinaElegida"));
+
     const rutinaImpresa = document.createElement("article");
 
     const divRutina = document.createElement("div");
