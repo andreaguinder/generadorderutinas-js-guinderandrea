@@ -102,6 +102,11 @@ header {
   padding-left: 0;
 }
 
+#abrirMenuResponsive {
+  color: #ffffff;
+  font-weight: bold;
+}
+
 .nav__responsive li a {
   background-color: #00e6d3;
   color: #ffffff;

@@ -28,6 +28,10 @@ const modalContainerRutinas = document.getElementsByClassName("modalContainerRut
 
 abrirModalDeRutina.addEventListener("click", (e) =>{
     e.preventDefault();
+        // si el usuario no ingresa su nombre y mail no se abre el modal de que fue enviado
+        if((document.getElementById("nombreUsuario").value === "") || (document.getElementById("emailUsuario").value === "")){
+            return;
+        }
     modalContainerRutinas.classList.toggle("modalRutinasActive")
 })
 
