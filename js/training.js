@@ -194,7 +194,7 @@ function mostrarResultadoIMC(resultadoIMC){
 }
 
 function imprimirRutina(){
-    rutinaElegida = JSON.parse(localStorage.getItem("rutinaElegida"));
+    //rutinaElegida = JSON.parse(localStorage.getItem("rutinaElegida"));
 
     const rutinaImpresa = document.createElement("article");
 
@@ -332,8 +332,7 @@ abrirModalDeRutina.addEventListener("click", (e) =>{
 //Devolución al usuario de rutina elegida de acuerdo a objetivo e intensidad
 
     rutinaElegida = obtenerRutina(usuario.intensidadEntrenamiento, usuario.tipoEntrenamiento);
+    localStorage.setItem("rutinaElegida", JSON.stringify(rutinaElegida));
     imprimirRutina();
     modalContainerRutinas.classList.toggle("modalRutinasActive")
-
-    localStorage.setItem("rutinaElegida", JSON.stringify(rutinaElegida));
 })
