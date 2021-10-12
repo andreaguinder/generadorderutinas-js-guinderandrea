@@ -194,7 +194,6 @@ function mostrarResultadoIMC(resultadoIMC){
 }
 
 function imprimirRutina(){
-    //rutinaElegida = JSON.parse(localStorage.getItem("rutinaElegida"));
 
     const rutinaImpresa = document.createElement("article");
 
@@ -324,15 +323,41 @@ cerrarRutina.addEventListener("click", () =>{
     modalContainerRutinas.classList.toggle("modalRutinasActive")
 })
 
+
 abrirModalDeRutina.addEventListener("click", (e) =>{
     e.preventDefault();
+
+    // si el usuario no ingresa datos no se abre el modal
+    if(document.getElementById("nombreUsuario").value === ""){
+        return;
+    }
+
     crearUsuario();
 
-    
-//Devolución al usuario de rutina elegida de acuerdo a objetivo e intensidad
-
+//Devolución al usuario de rutina elegida de acuerdo a objetivo e intensidad y guardado de datos en storage
     rutinaElegida = obtenerRutina(usuario.intensidadEntrenamiento, usuario.tipoEntrenamiento);
     localStorage.setItem("rutinaElegida", JSON.stringify(rutinaElegida));
+    localStorage.setItem("usuario", JSON.stringify(usuario));
     imprimirRutina();
     modalContainerRutinas.classList.toggle("modalRutinasActive")
 })
+
+// Recuperación de la rutina si el usuario ya la había pedido con el botón de reload
+
+const recuperarRutina = document.getElementById("recuperarRutina");
+
+recuperarRutina.addEventListener("click", (e) =>{
+    e.preventDefault();
+    const usuarioRecuperado = JSON.parse(localStorage.getItem("usuario"));
+    usuario = new Usuario(usuarioRecuperado.nombre, usuarioRecuperado.edad, usuarioRecuperado.altura, usuarioRecuperado.peso, usuarioRecuperado.esDeportista, usuarioRecuperado.intensidadEntrenamiento, usuarioRecuperado.tipoEntrenamiento);
+
+    rutinaElegida = JSON.parse(localStorage.getItem("rutinaElegida"));
+    imprimirRutina();
+    modalContainerRutinas.classList.toggle("modalRutinasActive")
+
+})
+// si no hay rutina guardada no aparece el boton de reload
+if (
+    localStorage.getItem("rutinaElegida") == null || localStorage.getItem("usuario") == null){
+    document.getElementById("recuperarRutina").style.display = "none";
+}
