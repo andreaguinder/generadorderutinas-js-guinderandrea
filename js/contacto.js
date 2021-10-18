@@ -39,7 +39,6 @@ cerrarRutina.addEventListener("click", () =>{
     modalContainerRutinas.classList.toggle("modalRutinasActive")
 })
 
-
 /////////Animaciones con Jquery
 
 $("#infoGymPagos").append(`<div>
@@ -75,9 +74,7 @@ $(() => {
     });
 })
 
-
+//////animaciones concatenadas
 setInterval(() => {
-    $("#suscribiteNewsletter").fadeOut(500, () => {
-        $("#suscribiteNewsletter").fadeIn(500)
-    })
+    $("#suscribiteNewsletter").fadeOut(500).fadeIn(500)
 }, 1200);
