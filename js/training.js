@@ -361,3 +361,23 @@ if (
     localStorage.getItem("rutinaElegida") == null || localStorage.getItem("usuario") == null){
     document.getElementById("recuperarRutina").style.display = "none";
 }
+
+/////////////////////////////////////
+//Agregamos un botón para info IMC con jQuery
+$("#infoIMC").append('<button id="btnIMC" class="btnGym btn-lg" style="margin-bottom: 1rem">Info Extra</button>');
+
+const btnInfoIMC = $("#btnIMC");
+
+$("#infoIMC").append(`<div id="div1">
+                    <h5 id="titIMC"></h5>
+                    <p id="pIMC"></p>
+                    </div>`);
+
+btnInfoIMC.click(() => {
+            const titIMC = "La siguiente información calcula además el Índice de Masa Corporal (IMC)"
+            const pIMC = "Si usted es deportista, no le arrojará un resultado del mismo, ya que no aplica"
+            const titIMCSelector = $("#titIMC")
+            const pIMCSelector = $("#pIMC")
+            titIMCSelector.text(titIMC)
+            pIMCSelector.text(pIMC)
+});
