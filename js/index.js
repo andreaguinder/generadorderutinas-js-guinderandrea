@@ -1,8 +1,17 @@
+$(document).ready( () =>{
+    $("#cargandoPagina").fadeOut(5000);
+});
+
+
 // Botón para ir al Generador de Rutinas con JQuery
 $("#btn-generarRutina").append(`<div>
                                 <a href='./pages/training.html'>
                                 <button class='btnGym'> IR A GENERAR MI RUTINA PERSONALIZADA</button>
                                 </a>
+                                </div>
+                                <br>
+                                <div>
+                                <p id="textoSobreRutina"> Haz un click en el botón y te llevará a un formulario que podrás completar para generar tu rutina </p>
                                 </div>`
 );
 
@@ -21,3 +30,14 @@ $("#carrouselEspacioGym").append(`<h2 class="text-center m-2 align-content-cente
                                     </div>
                                 </h1>`
 );
+
+/// Texto que aparece con Jquery cuando hacemos mouseover
+$(() => {
+
+    $("#btn-generarRutina").mouseleave(function () {
+        $("#textoSobreRutina").slideUp();
+    });
+    $("#btn-generarRutina").mouseover(function () {
+        $("#textoSobreRutina").slideDown();
+    });
+})

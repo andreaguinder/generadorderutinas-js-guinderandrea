@@ -17,6 +17,16 @@ ul, ol {
 }
 
 /*----Menú de Navegación Big Screens----*/
+#cargandoPagina {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #07a799;
+  color: #00e6d3;
+  height: 100vh;
+  width: 100vw;
+}
+
 header {
   background-image: url(../images/fondo-headerrrr2.jpg);
   background-repeat: no-repeat;
@@ -134,11 +144,12 @@ header {
   /*esto es el tamaño de la caja de los elementos del submenu */
 }
 
-.nav__responsive li:hover > ul {
-  display: block;
-  z-index: 100;
+/*
+.nav__responsive li:hover>ul {
+    display: block;
+    z-index: 100;
 }
-
+*/
 .container__menu--res {
   background-color: #00e6d3;
   height: 3rem;

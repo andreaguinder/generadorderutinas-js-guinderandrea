@@ -58,15 +58,15 @@
                 <div>
                     <div class="mb-3">
                         <label for="nombre" class="form-label align-content-sm-start col-form-label-sm">Nombre y Apellido</label>
-                        <input type="text" class="form-control bg-white text-dark btn-secondary" id="nombreUsuario" placeholder="Juan Perez" name="nombre" required>
+                        <input type="text" class="form-control  text-dark btn-secondary" id="nombreUsuario" placeholder="Juan Perez" name="nombre" required>
                     </div>
                     <div class="mb-3">
                         <label for="tel" class="form-label align-content-sm-start col-form-label-sm">Teléfono</label>
-                        <input type="text" class="form-control bg-white text-dark btn-secondary" id="telUsuario" placeholder="(+54) 11 6875 5982" name="tel" required>
+                        <input type="text" class="form-control  text-dark btn-secondary" id="telUsuario" placeholder="(+54) 11 6875 5982" name="tel" required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label align-content-sm-start col-form-label-sm">E-mail</label>
-                        <input type="text" class="form-control bg-white text-dark btn-secondary" id="emailUsuario" placeholder="juanperez@gmail.com" name="email" required>
+                        <input type="text" class="form-control  text-dark btn-secondary" id="emailUsuario" placeholder="juanperez@gmail.com" name="email" required>
                     </div><br>
                             <div class="form__elegir">
                                 <label for="actividad">Deseo recibir información sobre:</label><br><br>
@@ -82,11 +82,13 @@
                             <br>
                             <div class="mb-3">
                                 <label for="mensaje" class="form-label col-form-label-sm">Consulta</label>
-                                <textarea class="form-control bg-white text-dark btn-secondary" placeholder="Quisiera información sobre..." id="mensaje" rows="3" name="mensaje"></textarea>
+                                <textarea class="form-control text-dark btn-secondary" placeholder="Quisiera información sobre..." id="mensaje" rows="3" name="mensaje"></textarea>
                             </div>
                             <br>
                             <label for="recibir__novedades">Quiero recibir novedades y promociones</label>
-                            <input type="checkbox" name="recibir__novedades" id="recibir__novedades" value="first_checkbox"><br>
+                            <input type="checkbox" name="recibir__novedades" id="recibir__novedades" value="first_checkbox"><h5 id="suscribiteNewsletter">SUSCRIBITE</h5>
+
+                            <br>
                             <label for="botones__formulario"></label>
                             <div class="text-center p-2">
                             <input type="reset" name="botones__formulario" id="Restablecer" value="Restablecer" class="btnGym m-1">
@@ -105,6 +107,8 @@
                 </fieldset>
             </form>
             </section>
+
+            <section id="infoGymPagos" class="mt-5 text-center"></section>
             <div>
                 <div id="iconos__redes">
                 <a target="_blank" href=" "><i class="fab fa-facebook"></i></a>
@@ -112,6 +116,7 @@
                 </div>
             </div>
         </main>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="../js/contacto.js"></script>
 </body>
 </html>

@@ -12,7 +12,7 @@ const contenidoSuperior = {
 
 formularioContacto.innerHTML = `
                     <div class= "text-center">
-                    <h4>${contenidoSuperior.titulo}</h4>
+                    <h4 id="titActForm">${contenidoSuperior.titulo}</h4>
                     <p>${contenidoSuperior.texto}</p>
                     </div>
                 `;
@@ -38,3 +38,46 @@ abrirModalDeRutina.addEventListener("click", (e) =>{
 cerrarRutina.addEventListener("click", () =>{
     modalContainerRutinas.classList.toggle("modalRutinasActive")
 })
+
+
+/////////Animaciones con Jquery
+
+$("#infoGymPagos").append(`<div>
+                                <button id="mediosPagos" class="btnGym btn-lg"<h1>Nuestros medios de pagos</h1></button>
+                                <p id="infoMedioPagos" style="margin-top: 2rem">Trabajamos con todos los medios de pago; efectivo, tarjeta de débito o crédito, transferencia bancaria, otros.</p>
+                                </div>`
+);
+
+$(() => {
+
+    $("h4").css({"background-color": "none"})
+
+    $("#titActForm").mouseenter(function (){
+        $("#titActForm").css(({"background-color": "rgb(0,230,211)"}))
+    })
+
+    $("#titActForm").mouseleave(function(){
+        $("#titActForm").css({"background-color": "white"})
+    })
+    
+    $(".form-control").css({"background-color": "white"})
+
+    $(".form-control").on("mouseover", function (e){
+        $(e.target).css("background-color", "rgba(0, 230, 211, 0.473)");
+    });
+    $(".form-control").on("mouseleave", function (e){
+        $(e.target).css("background-color", "rgb(7, 167, 153)");
+    });
+
+
+    $("#mediosPagos").click(function () {
+        $("#infoMedioPagos").fadeToggle("slow");
+    });
+})
+
+
+setInterval(() => {
+    $("#suscribiteNewsletter").fadeOut(500, () => {
+        $("#suscribiteNewsletter").fadeIn(500)
+    })
+}, 1200);

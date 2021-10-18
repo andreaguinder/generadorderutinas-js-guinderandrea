@@ -5,7 +5,6 @@ cerrarRutina.addEventListener("click", () =>{
     modalContainerRutinas.classList.toggle("modalRutinasActive")
 })
 
-
 // Inserto DOM desde JS
 
 const contenedorArticulo = document.getElementById("titActGym");
@@ -67,32 +66,3 @@ actividadesGym.forEach((actGym) => {
     `;
     });
 })
-
-/*
-//Agregamos un botón y un div con jQuery
-$("body").append('<button id="btn-volverArriba"><i class="fas fa-arrow-circle-up"></i></button>');
-$("body").append(`<div id="div1" style="height: 120px">
-                        <h3>¡Hola Coder!</h3>
-                        <h4>Sorpresa 2</h4>
-                    </div>`);
-
-//Usamos slideUp sobre div1 en respuesta al click del boton btn1
-$("#btn-volverArriba").click(() => { 
-    $("#div1").slideUp("fast");
-});
-
-*/
-
-
-$("body").append('<button id="btn1">Mostrar</button>');
-$("body").append(`<div id="div1" style="height: 120px" "diplay:none">
-                        <h3>¡Hola Coder!</h3>
-                        <h4>Sorpresa 2</h4>
-                    </div>`);
-//Usamos slideUp sobre div1 en respuesta al click del boton btn1
-$("#btn1").click(() => { 
-
-
-    $("#div1").show("fast");
-    $("#div1").slideUp("fast");
-});
