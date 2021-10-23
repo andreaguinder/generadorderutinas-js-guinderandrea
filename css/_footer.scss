@@ -1,0 +1,41 @@
+footer{
+    background-color: $color5;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    
+    div{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 70%;
+        margin: auto;
+        padding-top: 1rem;
+
+        p{
+            text-align: center;
+            align-content: space-around;
+            color: $color3;
+            font-size: 0.50rem;
+
+            a{
+                text-decoration: none;
+                color: $color3;
+            }
+
+            a:hover{
+                color: $color1;
+            }
+        }
+    }
+
+    .fab{
+        font-size: 1.5rem;
+        color: $color3;
+        padding-bottom: 2rem;
+    }
+    .fab:hover{
+        color: $color1;
+    }
+}
