@@ -11,15 +11,15 @@ $("#btn-generarRutina").append(`<div>
 );
 
 $("#carrouselEspacioGym").append(`<h2 class="text-center m-2 align-content-center">Conocé nuestro espacio</h2>
-                                    <div id="carouselExampleFade" class="carousel slide carousel-fade my-5" data-bs-ride="carousel">
-                                    <div class="carousel-inner">
-                                    <div class="carousel-item active"  style="height:80vh" >
+                                    <div id="carouselExampleFade" class="carousel slide carousel-fade my-3" data-bs-ride="carousel">
+                                    <div class="carousel-inner mb-5">
+                                        <div class="carousel-item active"  style="height:80%" >
                                         <img src="./images/carrousel-1.jpg" class="d-block w-100" alt="...">
-                                    </div>
-                                    <div class="carousel-item"  style="height:80vh" >
+                                        </div>
+                                        <div class="carousel-item"  style="height:80%" >
                                         <img src="./images/24-hours-gym-r0lg4mkl4m.jpeg" class="d-block w-100" alt="...">
-                                    </div>
-                                    <div class="carousel-item"  style="height:80vh" >
+                                        </div>
+                                        <div class="carousel-item"  style="height:80%" >
                                         <img src="./images/fitness-center_p.jpg" class="d-block w-100"alt="...">
                                     </div>
                                     </div>
