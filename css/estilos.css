@@ -16,6 +16,10 @@ ul, ol {
   list-style: none;
 }
 
+.fas:hover {
+  color: #ffffff;
+}
+
 /*----Menú de Navegación Big Screens----*/
 #cargandoPagina {
   display: flex;
@@ -368,7 +372,7 @@ footer div p {
   text-align: center;
   align-content: space-around;
   color: #ffffff;
-  font-size: 0.5rem;
+  font-size: 0.75rem;
 }
 footer div p a {
   text-decoration: none;

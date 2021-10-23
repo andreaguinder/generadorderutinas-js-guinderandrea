@@ -1,7 +1,7 @@
 // Botón para ir al Generador de Rutinas con JQuery
 $("#btn-generarRutina").append(`<div>
                                 <a href='./pages/training.html'>
-                                <button class='btnGym' id='btnJquery'> IR A GENERAR MI RUTINA PERSONALIZADA</button>
+                                <button class='btnGym btn-lg' id='btnJquery'> IR A GENERAR MI RUTINA PERSONALIZADA</button>
                                 </a>
                                 </div>
                                 <br>
@@ -11,7 +11,7 @@ $("#btn-generarRutina").append(`<div>
 );
 
 $("#carrouselEspacioGym").append(`<h2 class="text-center m-2 align-content-center">Conocé nuestro espacio</h2>
-                                    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                                    <div id="carouselExampleFade" class="carousel slide carousel-fade my-5" data-bs-ride="carousel">
                                     <div class="carousel-inner">
                                     <div class="carousel-item active"  style="height:80vh" >
                                         <img src="./images/carrousel-1.jpg" class="d-block w-100" alt="...">
@@ -23,22 +23,5 @@ $("#carrouselEspacioGym").append(`<h2 class="text-center m-2 align-content-cente
                                         <img src="./images/fitness-center_p.jpg" class="d-block w-100"alt="...">
                                     </div>
                                     </div>
-                                </h1>`
+                                    `
 );
-/*
-/// Texto que aparece con Jquery cuando hacemos mouseover
-$(() => {
-
-        $("#btn-generarRutina").mouseover(function () {
-        $("#textoSobreRutina").slideDown();
-    });
-
-
-
-
-    $("#btn-generarRutina").mouseleave(function () {
-        $("#textoSobreRutina").slideUp();
-    });
-
-})
-*/

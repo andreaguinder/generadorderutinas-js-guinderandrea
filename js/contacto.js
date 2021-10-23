@@ -11,7 +11,7 @@ const contenidoSuperior = {
 };
 
 formularioContacto.innerHTML = `
-                    <div class= "text-center">
+                    <div class= "text-center m-4">
                     <h4 id="titActForm">${contenidoSuperior.titulo}</h4>
                     <p class="m-1">${contenidoSuperior.texto}</p>
                     </div>
@@ -30,7 +30,6 @@ abrirModalDeRutina.addEventListener("click", (e) =>{
     e.preventDefault();
         // si el usuario no ingresa su nombre y mail no se abre el modal de que fue enviado
         if((document.getElementById("nombreUsuario").value === "") || (document.getElementById("emailUsuario").value === "") || (document.getElementById("telUsuario").value === "")  || (document.getElementById("mensaje").value === "") ){
-            alert("¡No has completado los datos!");
             return;
         }
     modalContainerRutinas.classList.toggle("modalRutinasActive")

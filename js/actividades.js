@@ -16,8 +16,10 @@ const contenido = {
 };
 
 articulo.innerHTML = `
+                    <div class="mb-5">
                     <h1>${contenido.titulo}</h1>
                     <p>${contenido.texto}</p>
+                    </div>
                 `;
 
 contenedorArticulo.appendChild(articulo);
@@ -42,7 +44,7 @@ actividadesGym.forEach((actGym) => {
     div.style = "width: 18rem"
     div.innerHTML = `
                     <img src=${actGym.img} class="card-img-top" alt="...">
-                    <div class="card-body">
+                    <div class="card-body mb-4">
                         <h5 class="card-title grande">${actGym.nombreActGym}</h5>
                         <button id="${actGym.id}" class="btnGym m1">Info +</button>
                     </div>
