@@ -347,4 +347,17 @@ i {
 
 i:hover {
   color: #07a799;
+}
+
+.formEstilo {
+  width: 100%;
+  border-color: none;
+  border-radius: 0.25rem;
+  height: 2rem;
+  padding: 1rem;
+}
+
+.textArea {
+  height: 5rem;
+  border: 0.1rem solid black;
 }/*# sourceMappingURL=estilos.css.map */
