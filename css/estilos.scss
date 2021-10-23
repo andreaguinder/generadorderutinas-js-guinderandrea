@@ -115,11 +115,6 @@ header{
     padding-left: 0;
 }
 
-#abrirMenuResponsive{
-    color: $color3;
-    font-weight: bold;
-}
-
 .nav__responsive li a{
     background-color: $color1;
     color: $color3;
@@ -130,6 +125,7 @@ header{
     align-items: center;
     text-align: center;
     align-self: center;
+    padding: 0.5rem;
 }
 
 .nav__responsive li a:hover{
@@ -144,13 +140,14 @@ header{
     font-weight: bold;
     text-align: center;
     width: 80%; /*esto es el tamaño de la caja de los elementos del submenu */
+
 }
-/*
+
 .nav__responsive li:hover>ul {
     display: block;
     z-index: 100;
 }
-*/
+
 .container__menu--res{
     background-color: $color1;
     height: 3rem;

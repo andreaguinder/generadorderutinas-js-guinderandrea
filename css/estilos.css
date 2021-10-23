@@ -112,11 +112,6 @@ header {
   padding-left: 0;
 }
 
-#abrirMenuResponsive {
-  color: #ffffff;
-  font-weight: bold;
-}
-
 .nav__responsive li a {
   background-color: #00e6d3;
   color: #ffffff;
@@ -127,6 +122,7 @@ header {
   align-items: center;
   text-align: center;
   align-self: center;
+  padding: 0.5rem;
 }
 
 .nav__responsive li a:hover {
@@ -144,12 +140,11 @@ header {
   /*esto es el tamaño de la caja de los elementos del submenu */
 }
 
-/*
-.nav__responsive li:hover>ul {
-    display: block;
-    z-index: 100;
+.nav__responsive li:hover > ul {
+  display: block;
+  z-index: 100;
 }
-*/
+
 .container__menu--res {
   background-color: #00e6d3;
   height: 3rem;
@@ -351,5 +346,5 @@ i {
 }
 
 i:hover {
-  color: #00e6d3;
+  color: #07a799;
 }/*# sourceMappingURL=estilos.css.map */

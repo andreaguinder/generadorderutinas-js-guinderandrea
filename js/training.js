@@ -364,7 +364,7 @@ if (
 
 /////////////////////////////////////
 //Agregamos un botón para info IMC con jQuery
-$("#infoIMC").append('<button id="btnIMC" class="btnGym btn-lg" style="margin-bottom: 1rem">Info Extra</button>');
+$("#infoIMC").append('<button id="btnIMC" class="btnGym" style="margin-bottom: 1rem">Info Extra</button>');
 
 const btnInfoIMC = $("#btnIMC");
 
