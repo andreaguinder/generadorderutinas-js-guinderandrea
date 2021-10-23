@@ -90,7 +90,7 @@ header {
 .btnGym {
   color: #ffffff;
   padding: 0.3rem;
-  background-color: #00e6d3;
+  background-color: #07a799;
   font-weight: bold;
   border: none;
   border-radius: 0.5rem;
@@ -99,7 +99,8 @@ header {
 }
 
 .btnGym:hover {
-  background-color: #07a799;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
 }
 
 /*----Menú de Navegación Small Screens----*/
