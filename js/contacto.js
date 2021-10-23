@@ -13,7 +13,7 @@ const contenidoSuperior = {
 formularioContacto.innerHTML = `
                     <div class= "text-center">
                     <h4 id="titActForm">${contenidoSuperior.titulo}</h4>
-                    <p>${contenidoSuperior.texto}</p>
+                    <p class="m-1">${contenidoSuperior.texto}</p>
                     </div>
                 `;
 

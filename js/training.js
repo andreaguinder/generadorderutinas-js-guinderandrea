@@ -284,7 +284,7 @@ const contenidoSuperior = {
 generadorRutinas.innerHTML = `
                     <div class= "text-center">
                     <h1>${contenidoSuperior.titulo}</h1>
-                    <p>${contenidoSuperior.texto}</p>
+                    <p class="m-1">${contenidoSuperior.texto}</p>
                     </div>
                 `;
 
@@ -368,9 +368,9 @@ $("#infoIMC").append('<button id="btnIMC" class="btnGym" style="margin-bottom: 1
 
 const btnInfoIMC = $("#btnIMC");
 
-$("#infoIMC").append(`<div id="div1">
-                    <h5 id="titIMC"></h5>
-                    <p id="pIMC"></p>
+$("#infoIMC").append(`<div id="div1" class="m-2">
+                    <h6 id="titIMC"></h6>
+                    <p class="m-1" id="pIMC"></p>
                     </div>`);
 
 btnInfoIMC.click(() => {
