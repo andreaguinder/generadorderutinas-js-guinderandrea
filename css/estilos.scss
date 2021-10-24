@@ -36,6 +36,16 @@ ul, ol {
     color: $color3;
 }
 
+.actGymEnlaces{
+    a{
+        text-decoration: none;
+        color: $color7;
+    }
+    a:hover{
+        color: $color1;
+    }
+}
+
 /*----Menú de Navegación Big Screens----*/
 
 #cargandoPagina{

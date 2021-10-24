@@ -35,6 +35,14 @@ ul, ol {
   color: #ffffff;
 }
 
+.actGymEnlaces a {
+  text-decoration: none;
+  color: #07a799;
+}
+.actGymEnlaces a:hover {
+  color: #00e6d3;
+}
+
 /*----Menú de Navegación Big Screens----*/
 #cargandoPagina {
   display: flex;

@@ -10,15 +10,14 @@ cerrarRutina.addEventListener("click", () =>{
 const contenedorArticulo = document.getElementById("titActGym");
 const articulo = document.createElement("article");
 
-const contenido = {
-    titulo: "Actividades de Fitness Life",
-    texto: "Haga click en las imágenes para más información"
-};
-
 articulo.innerHTML = `
                     <div class="mb-5">
-                    <h1>${contenido.titulo}</h1>
-                    <p>${contenido.texto}</p>
+                    <h1>Actividades de Fitness Life</h1>
+                    <p class="actGymEnlaces">En nuestra sede encontrarás múltiples actividades que podés realizar: Musculación, Indoor Running, Funcional,
+                    Spinning, Kick-Boxing, Boxeo, entre otras. Si buscas inscribirte en el gimnasio, no dudes en completar el formulario
+                    en la pestaña de <a href="../pages/contacto.html"><strong>CONTACTO</strong></a>.</p>
+                    <p class="actGymEnlaces">Si por el contrario buscabas solamente generar una rutina podés ir a la pestaña <a href="../pages/training.html"><strong>TRAINING</strong></a>.</p><br>
+                    <h2>Para más información de en qué consiste cada actividad hace click en el siguiente botón:</h2>
                     </div>
                 `;
 

@@ -7,7 +7,7 @@ const entrenadores = document.createElement("article");
 
 const contenidoSuperior = {
     titulo: "¿Quiénes somos?",
-    texto: "Somos un grupo de entrenadores que decidió hacer este Generador de Rutinas profesional para aquellos que no pueden abonar rutinas personalizadas:"
+    texto: "Somos entrenadores en el gimnasio Fitness Life. En paralelo, decidimos crear este Generador de Rutinas profesional para aquellos que no pueden abonar rutinas personalizadas:"
 };
 
 entrenadores.innerHTML = `
