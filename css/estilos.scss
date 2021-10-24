@@ -6,6 +6,21 @@
 
 @import "variables";
 
+html{
+    overflow-y: scroll;
+}
+
+html::-webkit-scrollbar{
+    width: 0.5rem;
+    background-color: $color2;
+    border-radius: 3rem;
+}
+
+html::-webkit-scrollbar-thumb{
+    background-color: $color7;
+    border-radius: 3rem;
+}
+
 body{
     background-image: url(../images/photo-1550895030-823330fc2551.jpg);
     background-repeat: repeat;
@@ -72,7 +87,7 @@ header{
 .nav__inline li a {
     background-color: $color1;
     color: $color3;
-    padding: 1.25rem 1.25rem;
+    padding: 1.25rem 0.50rem;
     text-decoration: none;
     font-weight: bold;
     align-items: center;
@@ -353,6 +368,10 @@ fieldset{
 
 @media only screen and (min-width: 1024px){
 
+    .nav__inline li a {
+        padding: 1.25rem 1.25rem;
+    }
+    
     .img__index--act{
         height: 13rem;
         width: 13rem;
@@ -360,4 +379,5 @@ fieldset{
 }
 
 @import "contacto";
+@import "nosotros";
 @import "footer";

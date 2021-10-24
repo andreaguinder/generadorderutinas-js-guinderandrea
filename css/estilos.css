@@ -5,6 +5,21 @@
   font-family: "Saira", sans-serif;
 }
 
+html {
+  overflow-y: scroll;
+}
+
+html::-webkit-scrollbar {
+  width: 0.5rem;
+  background-color: rgba(0, 230, 211, 0.473);
+  border-radius: 3rem;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #07a799;
+  border-radius: 3rem;
+}
+
 body {
   background-image: url(../images/photo-1550895030-823330fc2551.jpg);
   background-repeat: repeat;
@@ -69,7 +84,7 @@ header {
 .nav__inline li a {
   background-color: #00e6d3;
   color: #ffffff;
-  padding: 1.25rem 1.25rem;
+  padding: 1.25rem 0.5rem;
   text-decoration: none;
   font-weight: bold;
   align-items: center;
@@ -335,6 +350,10 @@ fieldset {
   }
 }
 @media only screen and (min-width: 1024px) {
+  .nav__inline li a {
+    padding: 1.25rem 1.25rem;
+  }
+
   .img__index--act {
     height: 13rem;
     width: 13rem;
@@ -351,6 +370,33 @@ i {
 }
 
 i:hover {
+  color: #07a799;
+}
+
+#contenedorMercadoPago {
+  color: black;
+  background-color: #ffffff;
+  width: 90%;
+  height: auto;
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 1rem;
+  margin: auto;
+}
+#contenedorMercadoPago fieldset {
+  border: 0.25rem solid #00e6d3;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+#contenedorMercadoPago h3 {
+  color: #00e6d3;
+  font-weight: bold;
+}
+#contenedorMercadoPago a {
+  text-decoration: none;
+  color: #00e6d3;
+}
+#contenedorMercadoPago a:hover {
   color: #07a799;
 }
 
