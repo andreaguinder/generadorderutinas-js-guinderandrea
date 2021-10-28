@@ -34,6 +34,7 @@ const expresiones = {
     mensaje: /^[a-zA-ZÀ-ÿ\s-0-9_,.+-]{10,100}$/, // Letras, espacios, números, pueden llevar acentos.
 }
 
+
 const campos = {
     nombre: false,
     telefono: false,
@@ -104,6 +105,7 @@ formulario.addEventListener('submit', (e) => {
         });
         
     } else {
+        formulario.reset();
         document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
         setTimeout(() => {
             document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');

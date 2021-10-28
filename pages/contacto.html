@@ -56,21 +56,114 @@
             </section>
 
             <section>
-            <form class="form__contact p-3" id="formulario">
+            <form class="form__contact p-3 formulario" id="formulario" action="">
+
+         <!--Grupo: Nombre-->
+         <div class="formulario__grupo" id="grupo__nombre">
+            <label for="nombre" class="formulario__label">Nombre y Apellido</label>
+            <div class="formulario__grupo-input">
+                <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Jhon Doe">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener números, letras y guión bajo.</p>
+        </div>
+
+        <!--Grupo: Teléfono-->
+        <div class="formulario__grupo" id="grupo__telefono">
+            <label for="telefono" class="formulario__label">Teléfono</label>
+            <div class="formulario__grupo-input">
+                <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="2604448913">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">El teléfono solo puede contener números y el máximo son 14 dígitos.</p>
+        </div>
+
+        <!--Grupo: Correo Electronico-->
+        <div class="formulario__grupo" id="grupo__correo">
+            <label for="correo" class="formulario__label">Correo Electrónico</label>
+            <div class="formulario__grupo-input">
+                <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@gmail.com">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">El correo electrónico debe contar con @ y el nombre y extensión correspondiente (ejemplo .com)</p>
+        </div>
+
+        <!--Grupo: Elegir Actividad-->
+        <br>
+            <div class="form__elegir">
+                <label for="actividad">Deseo recibir información sobre:</label><br><br>
+                <label for="running">Indoor Running</label>
+                <input type="radio" name="actividad" id="running" value="Indoor Running" required checked>
+                <label for="spinning">Spinning</label>
+                <input type="radio" name="actividad" id="spinning" value="Spinning" required>
+                <label for="funcional">Funcional</label>
+                <input type="radio" name="actividad" id="funcional" value="Funcional" required>
+                <label for="musculacion">Musculación</label>
+                <input type="radio" name="actividad" id="musculacion" value="Musculación" required>
+            </div>
+            <br>
+
+            <!--Grupo: Introducir Mensaje-->
+            <div class="formulario__grupo" id="grupo__mensaje">
+                <label for="mensaje" class="formulario__label">Consulta</label>
+                <div class="formulario__grupo-input">
+                    <textarea type="text" class="formulario__input--mensaje" name="mensaje" id="mensaje" placeholder="Quiero consultar sobre..."></textarea>
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">La consulta debe tener al menos 10 palabras.</p>
+            </div>
+            <br>
+
+
+
+
+
+
+
+        <!--Grupo: Términos y condiciones-->
+        <div>
+            <label class="formulario__label">Deseo Suscribirme al Newsletter</label>
+                <input class="formulario__checkbox" type="checkbox" value="first_checkbox" name="recibir__novedades"  id="recibir__novedades"><h5 id="suscribiteNewsletter">SUSCRIBITE</h5>
+
+
+        </div>
+
+
+        <div>
+            <p class="formulario__mensaje" id="formulario__mensaje"><i class="fas fa-exclamation-triangle"></i><b>Error:</b>¡Por favor rellenar el formulario correctamente!</p>
+        </div>
+        <div class="formulario__grupo formulario__grupo-btn-enviar">
+            <button type="submit" class="btnGym">Enviar</button>
+            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">¡Su consulta fue enviada!</p>
+        </div>
+
+
+
+
+
+
+
+<!------------
                 <fieldset class="p-3">
                 <div>
-                    <div class="mb-3">
+                    <div class="mb-3 formulario__grupo" id="grupo__nombre">
                         <label for="nombre" class="form-label align-content-sm-start col-form-label-sm">Nombre y Apellido</label>
                         <input type="text" class="formEstilo form-control bg-light text-dark btn-secondary" id="nombreUsuario" placeholder="Juan Perez" name="nombre" required>
                     </div>
-                    <div class="mb-3">
+
+
+                    <div class="mb-3 formulario__grupo" id="grupo__telefono">
                         <label for="tel" class="form-label align-content-sm-start col-form-label-sm">Teléfono</label>
                         <input type="text" class="formEstilo form-control bg-light text-dark btn-secondary" id="telUsuario" placeholder="(+54) 11 6875 5982" name="tel" required>
                     </div>
-                    <div class="mb-3">
+
+
+                    <div class="mb-3 formulario__grupo" id="grupo__email">
                         <label for="email" class="form-label align-content-sm-start col-form-label-sm">E-mail</label>
                         <input type="text" class="formEstilo form-control bg-light text-dark btn-secondary" id="emailUsuario" placeholder="juanperez@gmail.com" name="email" required>
                     </div><br>
+
+
                             <div class="form__elegir">
                                 <label for="actividad">Deseo recibir información sobre:</label><br><br>
                                 <label for="running">Indoor Running</label>
@@ -83,19 +176,33 @@
                                 <input type="radio" name="actividad" id="musculacion" value="Musculación" required>
                             </div>
                             <br>
-                            <div class="mb-3">
+
+
+                            <div class="mb-3 formulario__grupo" id="grupo__mensaje">
                                 <label for="mensaje" class="form-label col-form-label-sm">Consulta</label>
                                 <textarea class="formEstilo form-control textArea bg-light text-dark btn-secondary" placeholder="Quisiera información sobre..." id="mensaje" rows="3" name="mensaje"></textarea>
                             </div>
                             <br>
+
+                            <div>
                             <label for="recibir__novedades">Quiero recibir novedades y promociones</label>
                             <input type="checkbox" name="recibir__novedades" id="recibir__novedades" value="first_checkbox"><h5 id="suscribiteNewsletter">SUSCRIBITE</h5>
+                            </div>
 
                             <br>
                             <label for="botones__formulario"></label>
                             <div class="text-center p-2">
                             <input type="reset" name="botones__formulario" id="Restablecer" value="Restablecer" class="btnGym m-1 btn-lg">
-                            <input type="submit" name="botones__formulario" id="enviar" value="Enviar" class="btnGym btn-lg m-1"><br>
+
+                            <div class="formulario__mensaje" id="formulario__mensaje">
+                                <p><i class="fas fa-exclamation-triangle"> </i> <b>Error:</b> Por favor rellenar el formulario correctamente.</p>
+                            </div>
+                            <div class="formulario__grupo formulario__grupo-btn-enviar">
+                                <button type="submit" name="botones__formulario" class="btnGym btn-lg m-1"id="enviar" value="Enviar">Enviar</button>
+                                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+                            </div>
+
+<br>
                             <div class="modalContainerRutinas">
                                 <div class="modalForm">
                                     <h5>¡Su consulta fue enviada!</h5>
@@ -106,7 +213,9 @@
 
                 </div>
                 </fieldset>
+                ----------->
             </form>
+
             </section>
         </main>
         <footer>
@@ -122,6 +231,6 @@
             </div>
         </footer>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="../js/contacto.js"></script>
+        <script src="../js/contacto.js"></script>
 </body>
 </html>
