@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/estilos.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300&display=swap" rel="stylesheet">
@@ -15,9 +21,10 @@
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <title>Gym Fitness Life</title>
 </head>
+
 <body>
-        <header class="img-fluid">
-            <div id="logo__superior"></div>
+    <header class="img-fluid">
+        <div id="logo__superior"></div>
         <!----Menú común en línea---->
         <div id="menu__nav">
             <nav>
@@ -49,188 +56,126 @@
             </nav>
         </div>
 
-        </header>
-        <main class="mainSpace">
+    </header>
+    <main class="mainSpace">
 
-            <section id="formularioContacto" class="text-center">
-            </section>
+        <section id="formularioContacto" class="text-center">
+        </section>
 
-            <section>
+        <section>
             <form class="form__contact p-3 formulario" id="formulario" action="">
 
-         <!--Grupo: Nombre-->
-         <div class="formulario__grupo" id="grupo__nombre">
-            <label for="nombre" class="formulario__label">Nombre y Apellido</label>
-            <div class="formulario__grupo-input">
-                <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Jhon Doe">
-                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-            </div>
-            <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener números, letras y guión bajo.</p>
-        </div>
-
-        <!--Grupo: Teléfono-->
-        <div class="formulario__grupo" id="grupo__telefono">
-            <label for="telefono" class="formulario__label">Teléfono</label>
-            <div class="formulario__grupo-input">
-                <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="2604448913">
-                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-            </div>
-            <p class="formulario__input-error">El teléfono solo puede contener números y el máximo son 14 dígitos.</p>
-        </div>
-
-        <!--Grupo: Correo Electronico-->
-        <div class="formulario__grupo" id="grupo__correo">
-            <label for="correo" class="formulario__label">Correo Electrónico</label>
-            <div class="formulario__grupo-input">
-                <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@gmail.com">
-                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-            </div>
-            <p class="formulario__input-error">El correo electrónico debe contar con @ y el nombre y extensión correspondiente (ejemplo .com)</p>
-        </div>
-
-        <!--Grupo: Elegir Actividad-->
-        <br>
-            <div class="form__elegir">
-                <label for="actividad">Deseo recibir información sobre:</label><br><br>
-                <label for="running">Indoor Running</label>
-                <input type="radio" name="actividad" id="running" value="Indoor Running" required checked>
-                <label for="spinning">Spinning</label>
-                <input type="radio" name="actividad" id="spinning" value="Spinning" required>
-                <label for="funcional">Funcional</label>
-                <input type="radio" name="actividad" id="funcional" value="Funcional" required>
-                <label for="musculacion">Musculación</label>
-                <input type="radio" name="actividad" id="musculacion" value="Musculación" required>
-            </div>
-            <br>
-
-            <!--Grupo: Introducir Mensaje-->
-            <div class="formulario__grupo" id="grupo__mensaje">
-                <label for="mensaje" class="formulario__label">Consulta</label>
-                <div class="formulario__grupo-input">
-                    <textarea type="text" class="formulario__input--mensaje" name="mensaje" id="mensaje" placeholder="Quiero consultar sobre..."></textarea>
-                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                <!------Nombre y Apellido------>
+                <div class="formulario__grupo" id="grupo__nombre">
+                    <label for="nombre" class="formulario__label">Nombre y Apellido</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Jhon Doe">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener
+                        números, letras y guión bajo.</p>
                 </div>
-                <p class="formulario__input-error">La consulta debe tener al menos 10 palabras.</p>
-            </div>
-            <br>
 
+                <!------Teléfono------>
+                <div class="formulario__grupo" id="grupo__telefono">
+                    <label for="telefono" class="formulario__label">Teléfono</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="telefono" id="telefono"
+                            placeholder="2604448913">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">El teléfono solo puede contener números y el máximo son 14
+                        dígitos.</p>
+                </div>
 
+                <!------Correo Electrónico------>
+                <div class="formulario__grupo" id="grupo__correo">
+                    <label for="correo" class="formulario__label">Correo Electrónico</label>
+                    <div class="formulario__grupo-input">
+                        <input type="email" class="formulario__input" name="correo" id="correo"
+                            placeholder="correo@gmail.com">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">El correo electrónico debe contar con @ y el nombre y extensión
+                        correspondiente (ejemplo gmail.com)</p>
+                </div>
 
+                <!-----Elegir Actividad---->
+                <br>
+                <div class="form__elegir">
+                    <label for="actividad">Deseo recibir información sobre:</label><br><br>
+                    <label for="running">Indoor Running</label>
+                    <input type="radio" name="actividad" id="running" value="Indoor Running" required checked>
+                    <label for="spinning">Spinning</label>
+                    <input type="radio" name="actividad" id="spinning" value="Spinning" required>
+                    <label for="funcional">Funcional</label>
+                    <input type="radio" name="actividad" id="funcional" value="Funcional" required>
+                    <label for="musculacion">Musculación</label>
+                    <input type="radio" name="actividad" id="musculacion" value="Musculación" required>
+                </div>
+                <br>
 
-
-
-
-        <!--Grupo: Términos y condiciones-->
-        <div>
-            <label class="formulario__label">Deseo Suscribirme al Newsletter</label>
-                <input class="formulario__checkbox" type="checkbox" value="first_checkbox" name="recibir__novedades"  id="recibir__novedades"><h5 id="suscribiteNewsletter">SUSCRIBITE</h5>
-
-
-        </div>
-
-
-        <div>
-            <p class="formulario__mensaje" id="formulario__mensaje"><i class="fas fa-exclamation-triangle"></i><b>Error:</b>¡Por favor rellenar el formulario correctamente!</p>
-        </div>
-        <div class="formulario__grupo formulario__grupo-btn-enviar">
-            <button type="submit" class="btnGym">Enviar</button>
-            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">¡Su consulta fue enviada!</p>
-        </div>
-
-
-
-
-
-
-
-<!------------
-                <fieldset class="p-3">
+                <!------Introducir Mensaje------>
+                <div class="formulario__grupo" id="grupo__mensaje">
+                    <label for="mensaje" class="formulario__label">Consulta</label>
+                    <div class="formulario__grupo-input">
+                        <textarea type="text" class="formulario__input--mensaje formulario__input" name="mensaje" id="mensaje"
+                            placeholder="Quiero consultar sobre..."></textarea>
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">La consulta debe tener al menos 10 palabras.</p>
+                </div>
+                <br>
+                <!------Surcribirse------>
                 <div>
-                    <div class="mb-3 formulario__grupo" id="grupo__nombre">
-                        <label for="nombre" class="form-label align-content-sm-start col-form-label-sm">Nombre y Apellido</label>
-                        <input type="text" class="formEstilo form-control bg-light text-dark btn-secondary" id="nombreUsuario" placeholder="Juan Perez" name="nombre" required>
-                    </div>
-
-
-                    <div class="mb-3 formulario__grupo" id="grupo__telefono">
-                        <label for="tel" class="form-label align-content-sm-start col-form-label-sm">Teléfono</label>
-                        <input type="text" class="formEstilo form-control bg-light text-dark btn-secondary" id="telUsuario" placeholder="(+54) 11 6875 5982" name="tel" required>
-                    </div>
-
-
-                    <div class="mb-3 formulario__grupo" id="grupo__email">
-                        <label for="email" class="form-label align-content-sm-start col-form-label-sm">E-mail</label>
-                        <input type="text" class="formEstilo form-control bg-light text-dark btn-secondary" id="emailUsuario" placeholder="juanperez@gmail.com" name="email" required>
-                    </div><br>
-
-
-                            <div class="form__elegir">
-                                <label for="actividad">Deseo recibir información sobre:</label><br><br>
-                                <label for="running">Indoor Running</label>
-                                <input type="radio" name="actividad" id="running" value="Indoor Running" required checked>
-                                <label for="spinning">Spinning</label>
-                                <input type="radio" name="actividad" id="spinning" value="Spinning" required>
-                                <label for="funcional">Funcional</label>
-                                <input type="radio" name="actividad" id="funcional" value="Funcional" required>
-                                <label for="musculacion">Musculación</label>
-                                <input type="radio" name="actividad" id="musculacion" value="Musculación" required>
-                            </div>
-                            <br>
-
-
-                            <div class="mb-3 formulario__grupo" id="grupo__mensaje">
-                                <label for="mensaje" class="form-label col-form-label-sm">Consulta</label>
-                                <textarea class="formEstilo form-control textArea bg-light text-dark btn-secondary" placeholder="Quisiera información sobre..." id="mensaje" rows="3" name="mensaje"></textarea>
-                            </div>
-                            <br>
-
-                            <div>
-                            <label for="recibir__novedades">Quiero recibir novedades y promociones</label>
-                            <input type="checkbox" name="recibir__novedades" id="recibir__novedades" value="first_checkbox"><h5 id="suscribiteNewsletter">SUSCRIBITE</h5>
-                            </div>
-
-                            <br>
-                            <label for="botones__formulario"></label>
-                            <div class="text-center p-2">
-                            <input type="reset" name="botones__formulario" id="Restablecer" value="Restablecer" class="btnGym m-1 btn-lg">
-
-                            <div class="formulario__mensaje" id="formulario__mensaje">
-                                <p><i class="fas fa-exclamation-triangle"> </i> <b>Error:</b> Por favor rellenar el formulario correctamente.</p>
-                            </div>
-                            <div class="formulario__grupo formulario__grupo-btn-enviar">
-                                <button type="submit" name="botones__formulario" class="btnGym btn-lg m-1"id="enviar" value="Enviar">Enviar</button>
-                                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
-                            </div>
-
-<br>
-                            <div class="modalContainerRutinas">
-                                <div class="modalForm">
-                                    <h5>¡Su consulta fue enviada!</h5>
-                                    <button id="cerrarRutina" class="btnGym mx-3">CERRAR VENTANA</button>
-                                </div>
-                            </div>
-                            </div>
-
+                    <label class="formulario__label">Deseo Suscribirme al Newsletter</label>
+                    <input class="formulario__checkbox" type="checkbox" value="first_checkbox" name="recibir__novedades"
+                        id="recibir__novedades">
+                    <h5 id="suscribiteNewsletter">SUSCRIBITE</h5>
                 </div>
-                </fieldset>
-                ----------->
+                <!------Mensaje de Error------>
+                <div>
+                    <p class="formulario__mensaje" id="formulario__mensaje"><i
+                            class="fas fa-exclamation-triangle"></i><b>Error:</b>¡Por favor rellenar el formulario
+                        correctamente!</p>
+                </div>
+                <!------Botones de Reset y Envio------>
+                <div class="formulario__grupo formulario__grupo-btn-enviar text-center">
+                    <button type="reset" class="btnGym btn-lg mx-3 my-2">Restablecer</button>
+                    <button type="submit" class="btnGym btn-lg mx-3">Enviar</button>
+                <!------Mensaje de Éxito de Envio------>
+                    <div class="modalContainerRutinas">
+                        <div class="modalForm">
+                            <h5 id="cerrarRutina">¡Su consulta fue enviada!</h5><button class="btnGym mx-3">CERRAR
+                                VENTANA</button>
+                        </div>
+                    </div>
+                </div>
             </form>
 
-            </section>
-        </main>
-        <footer>
+        </section>
+    </main>
+    <footer>
+        <div>
             <div>
-            <div>
-                <a target="_blank" class="facebook" href="https://www.facebook.com/profile.php?id=100010447723135"><i class="fab fa-facebook"></i></a>
-                <a target="_blank" class="instagram" href="https://www.instagram.com/andreaguinder/"><i class="fab fa-instagram"></i></a>
-                <a target="_blank" class="linkedin" href="https://www.linkedin.com/in/andrea-bel%C3%A9n-guinder-vichich-2a74a8178/"><i class="fab fa-linkedin"></i></a>
-                <a target="_blank" class="github" href="https://github.com/andreaguinder"><i class="fab fa-github"></i></a>
+                <a target="_blank" class="facebook" href="https://www.facebook.com/profile.php?id=100010447723135"><i
+                        class="fab fa-facebook"></i></a>
+                <a target="_blank" class="instagram" href="https://www.instagram.com/andreaguinder/"><i
+                        class="fab fa-instagram"></i></a>
+                <a target="_blank" class="linkedin"
+                    href="https://www.linkedin.com/in/andrea-bel%C3%A9n-guinder-vichich-2a74a8178/"><i
+                        class="fab fa-linkedin"></i></a>
+                <a target="_blank" class="github" href="https://github.com/andreaguinder"><i
+                        class="fab fa-github"></i></a>
             </div>
-            <p> Copyright © | 2021 | Todos los Derechos Reservados | Diseño y Desarrollo por <a href="https://andreabelenguinder.wixsite.com/misitio" target="_blank">Andrea
+            <p> Copyright © | 2021 | Todos los Derechos Reservados | Diseño y Desarrollo por <a
+                    href="https://andreabelenguinder.wixsite.com/misitio" target="_blank">Andrea
                     Guinder</a></p>
-            </div>
-        </footer>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="../js/contacto.js"></script>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../js/contacto.js"></script>
 </body>
+
 </html>

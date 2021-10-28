@@ -11,7 +11,7 @@
 
 .formulario__input{
     width: 100%;
-    background: #fff;
+    background-color: $color3;
     border: 3px solid transparent;
     border-radius: 3px;
     height: 2.50rem;
@@ -37,7 +37,6 @@
     box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
 }
 
-
 .formulario__input:focus{
     border: 3px solid $color7;
     outline: none;
@@ -62,20 +61,6 @@
     opacity: 0;
 }
 
-.formulario__checkbox{
-    margin-right: 10px;
-}
-
-.formulario__grupo-terminos{
-    grid-column: span 2;
-}
-.formulario__mensaje {
-    grid-column: span 2;
-}
-.formulario__grupo-btn-enviar{
-    grid-column: span 2;
-}
-
 .formulario__mensaje{
     height: 45px;
     line-height: 45px;
@@ -92,23 +77,6 @@
 .formulario__mensaje p{
     padding: 5px;
 }
-
-.formulario__grupo-btn-enviar{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.formulario__mensaje-exito{
-    font-size: 14px;
-    color: #119200;
-    display: none;
-}
-
-.formulario__mensaje-exito-activo {
-    display: block;
-}
-
 
 .formulario__grupo-correcto .formulario__validacion-estado {
     color: #1ed12d;
