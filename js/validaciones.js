@@ -383,7 +383,7 @@ formulario.addEventListener('menu', (e) => {
 */
     crearUsuario();
 
-    if ((campos.nombre && campos.edad && campos.altura && campos.peso) == ""){
+    if ((campos.nombre && campos.edad && campos.altura && campos.peso)){
         formulario.reset();
 
         //Devolución al usuario de rutina elegida de acuerdo a objetivo e intensidad y guardado de datos en storage
