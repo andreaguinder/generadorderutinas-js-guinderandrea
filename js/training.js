@@ -22,14 +22,14 @@ class Usuario {
         this.tipoEntrenamiento = tipoEntrenamiento;
     }
 
-    calcularIndiceMasa(){
-        return (this.peso / (this.altura**2));
+    calcularIndiceMasa() {
+        return (this.peso / (this.altura ** 2));
     }
 }
 
 // SE DEFINE LA ESTRUCTURA DE LAS RUTINAS
 class PlanillaRutina {
-    constructor(usuario, jornadas){
+    constructor(usuario, jornadas) {
         this.usuario = usuario;
         this.jornadas = jornadas;
     }
@@ -179,21 +179,18 @@ let rutina9 = new PlanillaRutina(usuario, [jornada2, jornada8, jornada9, jornada
 // SE DEFINEN LAS FUNCIONES DEL SIMULADOR
 
 // CÁLCULO IMC PARA QUIEN NO ES DEPORTISTA
-function mostrarResultadoIMC(resultadoIMC){
-    if (resultadoIMC < 18.5){
+function mostrarResultadoIMC(resultadoIMC) {
+    if (resultadoIMC < 18.5) {
         return "Tu IMC es: " + resultadoIMC + "<br>Te encontrás dentro del rango de peso insuficiente; visitá a tu médico o nutricionista.";
-    }
-
-    else if (resultadoIMC >= 18.5 && resultadoIMC <= 24.9){
+    } else if (resultadoIMC >= 18.5 && resultadoIMC <= 24.9) {
         return "Tu IMC es: " + resultadoIMC + "<br>Te encontrás en el rango de peso saludable; te recomendamos una rutina de mantenimiento de al menos 2 días a la semana.";
-    }
-
-    else {
+    } else {
         return "Tu IMC es: " + resultadoIMC + "<br>Te encontrás dentro del rango de sobrepeso, te recomendamos consultar con un médico y realizar una rutina de al menos 5 días a la semana.";
     }
 }
 
-function imprimirRutina(){
+// IMPRIMIR RUTINA
+function imprimirRutina() {
 
     const rutinaImpresa = document.createElement("article");
 
@@ -203,7 +200,7 @@ function imprimirRutina(){
 
     const contenido = {
         titulo: "Esta es tu rutina generada en Fitness Life",
-        texto: "Usuario: " + usuario.nombre + " <br>"+ "Edad: " + usuario.edad + " años" + "<br>" +  "Altura: " + usuario.altura + " metros" + "<br>" + "Peso: " + usuario.peso + " kilos"  + "<br>" +  "Intensidad de Entrenamiento: " + usuario.intensidadEntrenamiento + "<br>" + "Objetivo de entrenamiento: " + usuario.tipoEntrenamiento + "<br>" + "Sos deportista: " + ((usuario.esDeportista) ? "Si" : "No") + "<br>" + ((!usuario.esDeportista) ? mostrarResultadoIMC(usuario.calcularIndiceMasa()) : "" ) + "<br><br>" + "Cada jornada es un día de entrenamiento y estará compuesta por uno o más ejercicios." + "<br>",
+        texto: "Usuario: " + usuario.nombre + " <br>" + "Edad: " + usuario.edad + " años" + "<br>" + "Altura: " + usuario.altura + " metros" + "<br>" + "Peso: " + usuario.peso + " kilos" + "<br>" + "Intensidad de Entrenamiento: " + usuario.intensidadEntrenamiento + "<br>" + "Objetivo de entrenamiento: " + usuario.tipoEntrenamiento + "<br>" + "Sos deportista: " + ((usuario.esDeportista) ? "Si" : "No") + "<br>" + ((!usuario.esDeportista) ? mostrarResultadoIMC(usuario.calcularIndiceMasa()) : "") + "<br><br>" + "Cada jornada es un día de entrenamiento y estará compuesta por uno o más ejercicios." + "<br>",
     };
 
     rutinaImpresa.innerHTML = `
@@ -215,59 +212,59 @@ function imprimirRutina(){
 
     rutinaElegida.jornadas.forEach(element => {
         const divJornada = document.createElement("div");
-        divJornada.innerHTML= `
+        divJornada.innerHTML = `
                                 <div>
                                 <p>__________________________</p>
                                 <h6>Nombre de la Jornada: ${element.nombreJornada}</h6>
                                 <p>En este tipo de jornada se trabaja: ${element.tipoJornada}</p>
                                 </div>
                                 `;
-                divRutina.appendChild(divJornada);
-        
+        divRutina.appendChild(divJornada);
+
 
         element.listaDeEjercicios.forEach(element => {
             const divEjercicio = document.createElement("div");
-            divEjercicio.innerHTML= `
+            divEjercicio.innerHTML = `
                                     <div style="text-align: left">
                                     <h6>Nombre del ejercicio: ${element.nombreEjercicio}</h6>
                                     <p>Cantidad de Series o duración: ${element.cantSeries}</p>
                                     <p>Cantidad de Repeticiones o duración: ${element.cantRepeticiones}</p>
                                     </div>
                                     `;
-                divRutina.appendChild(divEjercicio);
-    
+            divRutina.appendChild(divEjercicio);
+
 
         });
 
-    mostrarResultadoIMC();
-    modalConRutinaElegida.appendChild(rutinaImpresa);
-    modalConRutinaElegida.appendChild(divRutina);
-    }
-    )}
+        mostrarResultadoIMC();
+        modalConRutinaElegida.appendChild(rutinaImpresa);
+        modalConRutinaElegida.appendChild(divRutina);
+        
+    })
+}
 // FUNCIÓN QUE LE DEVOLVERÁ AL USUARIO LA RUTINA CREADA POR EL SIMULADOR
-function obtenerRutina(intensidadEntrenamiento, tipoEntrenamiento){
+function obtenerRutina(intensidadEntrenamiento, tipoEntrenamiento) {
 
-    if(intensidadEntrenamiento === "Baja" && tipoEntrenamiento === "Bajar de Peso"){
+    if (intensidadEntrenamiento === "Baja" && tipoEntrenamiento === "Bajar de Peso") {
         return rutina1;
-    } else if(intensidadEntrenamiento === "Baja" && tipoEntrenamiento === "Tonificar/Definir"){
+    } else if (intensidadEntrenamiento === "Baja" && tipoEntrenamiento === "Tonificar/Definir") {
         return rutina2;
-    } else if(intensidadEntrenamiento === "Baja" && tipoEntrenamiento === "Muscularse"){
+    } else if (intensidadEntrenamiento === "Baja" && tipoEntrenamiento === "Muscularse") {
         return rutina3;
-    } else if(intensidadEntrenamiento === "Moderada" && tipoEntrenamiento === "Bajar de Peso"){
+    } else if (intensidadEntrenamiento === "Moderada" && tipoEntrenamiento === "Bajar de Peso") {
         return rutina4;
-    } else if(intensidadEntrenamiento === "Moderada" && tipoEntrenamiento === "Tonificar/Definir"){
+    } else if (intensidadEntrenamiento === "Moderada" && tipoEntrenamiento === "Tonificar/Definir") {
         return rutina5;
-    } else if(intensidadEntrenamiento === "Moderada" && tipoEntrenamiento === "Muscularse"){
+    } else if (intensidadEntrenamiento === "Moderada" && tipoEntrenamiento === "Muscularse") {
         return rutina6;
-    } else if(intensidadEntrenamiento === "Intensa" && tipoEntrenamiento === "Bajar de Peso"){
+    } else if (intensidadEntrenamiento === "Intensa" && tipoEntrenamiento === "Bajar de Peso") {
         return rutina7;
-    } else if(intensidadEntrenamiento === "Intensa" && tipoEntrenamiento === "Tonificar/Definir"){
+    } else if (intensidadEntrenamiento === "Intensa" && tipoEntrenamiento === "Tonificar/Definir") {
         return rutina8;
-    } else if(intensidadEntrenamiento === "Intensa" && tipoEntrenamiento === "Muscularse"){
+    } else if (intensidadEntrenamiento === "Intensa" && tipoEntrenamiento === "Muscularse") {
         return rutina9;
     }
 }
-
 
 // HTML de la página de Training a partir de JS (DOM)
 
@@ -297,7 +294,7 @@ const cerrarRutina = document.getElementById("cerrarRutina")
 const modalContainerRutinas = document.getElementsByClassName("modalContainerRutinas")[0]
 const modalConRutinaElegida = document.getElementById("rutinaElegidaImpresa");
 
-function crearUsuario(){
+function crearUsuario() {
     // Obtengo el usuario
     usuario = new Usuario(
         document.getElementById("nombreUsuario").value,
@@ -310,91 +307,115 @@ function crearUsuario(){
     );
 }
 
-cerrarRutina.addEventListener("click", () =>{
-    modalContainerRutinas.classList.toggle("modalRutinasActive")
-})
+// Acá empieza la validación del formulario
+
+const formulario = document.getElementById('formulario');
+const inputs = document.querySelectorAll('#formulario input');
+const textareas = document.querySelectorAll('#formulario textarea');
+
+const expresiones = {
+    nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+    edad: /^\d{1,2}$/,
+    peso: /^[0-9.]{1,4}$/,
+    altura: /^[0-9.]{1,4}$/,
+}
+
+const campos = {
+    nombre: false,
+    edad: false,
+    peso: false,
+    altura: false
+}
+
+const validarFormulario = (e) => {
+    switch (e.target.name) {
+        case "nombre":
+            validarCampo(expresiones.nombre, e.target, 'nombre')
+            break;
+        case "edad":
+            validarCampo(expresiones.edad, e.target, 'edad')
+            break;
+        case "peso":
+            validarCampo(expresiones.peso, e.target, 'peso')
+            break;
+        case "altura":
+            validarCampo(expresiones.altura, e.target, 'altura')
+            break;
+    }
+}
+
+// Validación del formulario con iconos
+const validarCampo = (expresion, input, campo, ) => {
+    if (expresion.test(input.value)) { //comprueba la expresion regular de usuario en el campo de usuario.
+        document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
+        document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
+        document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
+        document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
+        document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
+        campos[campo] = true;
+    } else {
+        document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
+        document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
+        document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle');
+        document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
+        document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
+        campos[campo] = false;
+
+    }
+}
+
+inputs.forEach((input) => {
+    input.addEventListener('keyup', validarFormulario); //hace la comprobación cada vez que levanta la tecla.
+    input.addEventListener('blur', validarFormulario); //hace la comprobación cuando sale del campo.
+});
+
+textareas.forEach((textarea) => {
+    textarea.addEventListener('keyup', validarFormulario); //hace la comprobación cada vez que levanta la tecla.
+    textarea.addEventListener('blur', validarFormulario); //hace la comprobación cuando sale del campo.
+});
 
 
-formulario.addEventListener('submit', (e) => {
+// Generar la rutina
+document.getElementById("generarRutina").addEventListener("click", (e) =>{
     e.preventDefault();
-    
     crearUsuario();
 
-    if (campos.nombre && campos.edad && campos.altura && campos.peso) {
+    if ((campos.nombre && campos.edad && campos.altura && campos.peso)){
         formulario.reset();
 
-    //Devolución al usuario de rutina elegida de acuerdo a objetivo e intensidad y guardado de datos en storage
-    rutinaElegida = obtenerRutina(usuario.intensidadEntrenamiento, usuario.tipoEntrenamiento);
-    localStorage.setItem("rutinaElegida", JSON.stringify(rutinaElegida));
-    localStorage.setItem("usuario", JSON.stringify(usuario));
-    imprimirRutina();
-    modalContainerRutinas.classList.toggle("modalRutinasActive")
-
-
+        //Devolución al usuario de rutina elegida de acuerdo a objetivo e intensidad y guardado de datos en storage
+        rutinaElegida = obtenerRutina(usuario.intensidadEntrenamiento, usuario.tipoEntrenamiento);
+        localStorage.setItem("rutinaElegida", JSON.stringify(rutinaElegida));
+        localStorage.setItem("usuario", JSON.stringify(usuario));
+        imprimirRutina();
+        modalContainerRutinas.classList.toggle("modalRutinasActive")
         document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
             icono.classList.remove('formulario__grupo-correcto');
         });
-        
     } else {
         document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
         setTimeout(() => {
             document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
         }, 5000);
     }
-
-
 });
-    
-    // Recuperación de la rutina si el usuario ya la había pedido con el botón de reload
-    
-    const recuperarRutina = document.getElementById("recuperarRutina");
-    
-    recuperarRutina.addEventListener("click", (e) =>{
-        e.preventDefault();
-        const usuarioRecuperado = JSON.parse(localStorage.getItem("usuario"));
-        usuario = new Usuario(usuarioRecuperado.nombre, usuarioRecuperado.edad, usuarioRecuperado.altura, usuarioRecuperado.peso, usuarioRecuperado.esDeportista, usuarioRecuperado.intensidadEntrenamiento, usuarioRecuperado.tipoEntrenamiento);
-    
-        rutinaElegida = JSON.parse(localStorage.getItem("rutinaElegida"));
-        imprimirRutina();
-        modalContainerRutinas.classList.toggle("modalRutinasActive")
-    
-    })
-    // si no hay rutina guardada no aparece el boton de reload
-    if (localStorage.getItem("rutinaElegida") == null || localStorage.getItem("usuario") == null){
-        document.getElementById("recuperarRutina").style.display = "none";
-    }
 
+// Cerrar rutina y resetear el false de los campos para pedir validación nuevamente
 
-
-
-
-
-
-
-/*
-abrirModalDeRutina.addEventListener("click", (e) =>{
-    e.preventDefault();
-
-    // si el usuario no ingresa datos no se abre el modal
-    if(document.getElementById("nombreUsuario").value === ""){
-        return;
-    }
-
-    crearUsuario();
-
-//Devolución al usuario de rutina elegida de acuerdo a objetivo e intensidad y guardado de datos en storage
-    rutinaElegida = obtenerRutina(usuario.intensidadEntrenamiento, usuario.tipoEntrenamiento);
-    localStorage.setItem("rutinaElegida", JSON.stringify(rutinaElegida));
-    localStorage.setItem("usuario", JSON.stringify(usuario));
-    imprimirRutina();
+cerrarRutina.addEventListener("click", () => {
     modalContainerRutinas.classList.toggle("modalRutinasActive")
+    formulario.reset();
+    campos.nombre = false;
+    campos.edad = false;
+    campos.altura = false;
+    campos.peso = false;
 })
 
 // Recuperación de la rutina si el usuario ya la había pedido con el botón de reload
 
 const recuperarRutina = document.getElementById("recuperarRutina");
 
-recuperarRutina.addEventListener("click", (e) =>{
+recuperarRutina.addEventListener("click", (e) => {
     e.preventDefault();
     const usuarioRecuperado = JSON.parse(localStorage.getItem("usuario"));
     usuario = new Usuario(usuarioRecuperado.nombre, usuarioRecuperado.edad, usuarioRecuperado.altura, usuarioRecuperado.peso, usuarioRecuperado.esDeportista, usuarioRecuperado.intensidadEntrenamiento, usuarioRecuperado.tipoEntrenamiento);
@@ -404,18 +425,12 @@ recuperarRutina.addEventListener("click", (e) =>{
     modalContainerRutinas.classList.toggle("modalRutinasActive")
 
 })
-// si no hay rutina guardada no aparece el boton de reload
-if (
-    localStorage.getItem("rutinaElegida") == null || localStorage.getItem("usuario") == null){
+// Si no hay rutina guardada no aparece el boton de reload
+if (localStorage.getItem("rutinaElegida") == null || localStorage.getItem("usuario") == null) {
     document.getElementById("recuperarRutina").style.display = "none";
 }
 
-
-
-
-*/
-/////////////////////////////////////
-//Agregamos un botón para info IMC con jQuery
+//Agrego un botón para info IMC con jQuery
 $("#infoIMC").append('<button id="btnIMC" class="btnGym" style="margin-bottom: 1rem">Info Extra</button>');
 
 const btnInfoIMC = $("#btnIMC");

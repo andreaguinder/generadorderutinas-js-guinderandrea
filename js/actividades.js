@@ -34,8 +34,8 @@ const verActividades = () => {
 
 fetch(URL)
 .then(response => response.json())
-.then(actividadesGym => {
-    actividadesGym.forEach((actGym) => {
+.then(activGym => {
+    activGym.forEach((actGym) => {
     const div = document.createElement('div')
     div.className = "card-img-top"
     div.style = "width: 18rem"

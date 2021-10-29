@@ -189,6 +189,7 @@ function mostrarResultadoIMC(resultadoIMC) {
     }
 }
 
+// IMPRIMIR RUTINA
 function imprimirRutina() {
 
     const rutinaImpresa = document.createElement("article");
@@ -265,7 +266,6 @@ function obtenerRutina(intensidadEntrenamiento, tipoEntrenamiento) {
     }
 }
 
-
 // HTML de la página de Training a partir de JS (DOM)
 
 const contenedorrutinasTraining = document.getElementById("rutinasTraining");
@@ -288,7 +288,6 @@ generadorRutinas.innerHTML = `
 contenedorrutinasTraining.appendChild(generadorRutinas);
 
 //modal con la rutina
-//modal con la rutina
 
 const abrirModalDeRutina = document.getElementById("generarRutina")
 const cerrarRutina = document.getElementById("cerrarRutina")
@@ -308,6 +307,7 @@ function crearUsuario() {
     );
 }
 
+// Acá empieza la validación del formulario
 
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
@@ -344,7 +344,7 @@ const validarFormulario = (e) => {
     }
 }
 
-
+// Validación del formulario con iconos
 const validarCampo = (expresion, input, campo, ) => {
     if (expresion.test(input.value)) { //comprueba la expresion regular de usuario en el campo de usuario.
         document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
@@ -374,13 +374,10 @@ textareas.forEach((textarea) => {
     textarea.addEventListener('blur', validarFormulario); //hace la comprobación cuando sale del campo.
 });
 
-/////////////////////////////
+
+// Generar la rutina
 document.getElementById("generarRutina").addEventListener("click", (e) =>{
     e.preventDefault();
-/*
-formulario.addEventListener('menu', (e) => {
-    e.preventDefault();
-*/
     crearUsuario();
 
     if ((campos.nombre && campos.edad && campos.altura && campos.peso)){
@@ -392,8 +389,6 @@ formulario.addEventListener('menu', (e) => {
         localStorage.setItem("usuario", JSON.stringify(usuario));
         imprimirRutina();
         modalContainerRutinas.classList.toggle("modalRutinasActive")
-
-
         document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
             icono.classList.remove('formulario__grupo-correcto');
         });
@@ -405,9 +400,15 @@ formulario.addEventListener('menu', (e) => {
     }
 });
 
+// Cerrar rutina y resetear el false de los campos para pedir validación nuevamente
+
 cerrarRutina.addEventListener("click", () => {
     modalContainerRutinas.classList.toggle("modalRutinasActive")
     formulario.reset();
+    campos.nombre = false;
+    campos.edad = false;
+    campos.altura = false;
+    campos.peso = false;
 })
 
 // Recuperación de la rutina si el usuario ya la había pedido con el botón de reload
@@ -424,12 +425,12 @@ recuperarRutina.addEventListener("click", (e) => {
     modalContainerRutinas.classList.toggle("modalRutinasActive")
 
 })
-// si no hay rutina guardada no aparece el boton de reload
+// Si no hay rutina guardada no aparece el boton de reload
 if (localStorage.getItem("rutinaElegida") == null || localStorage.getItem("usuario") == null) {
     document.getElementById("recuperarRutina").style.display = "none";
 }
 
-//Agregamos un botón para info IMC con jQuery
+//Agrego un botón para info IMC con jQuery
 $("#infoIMC").append('<button id="btnIMC" class="btnGym" style="margin-bottom: 1rem">Info Extra</button>');
 
 const btnInfoIMC = $("#btnIMC");
@@ -447,15 +448,3 @@ btnInfoIMC.click(() => {
             titIMCSelector.text(titIMC)
             pIMCSelector.text(pIMC)
 });
-
-
-/*
-cerrarRutina.addEventListener("click", () => {
-    modalContainerRutinas.classList.toggle("modalRutinasActive")
-    formulario.reset();
-})
-
-
-
-document.querySelector(".modalContainerRutinas").classList.remove('modalRutinasActive');
-*/
