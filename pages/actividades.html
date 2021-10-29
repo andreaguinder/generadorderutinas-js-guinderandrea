@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Estilos propios de CSS-->
     <link rel="stylesheet" href="../css/estilos.css">
+    <!--Enlaces de Bootstrap (CSS, JS y Popper)-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -14,9 +16,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
+    <!--Enlace a Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300&display=swap" rel="stylesheet">
+    <!--Enlace a FontAwesome-->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <title>Gym Fitness Life</title>
@@ -42,7 +46,7 @@
         <div id="menu__nav--responsive">
             <nav>
                 <ul class="nav__responsive container__menu--res">
-                    <li>                        
+                    <li>
                         <div><i class="fas fa-bars"></i></div>
                         <ul id="ulNavResponsive">
                             <li><a href="../index.html">INICIO</a></li>
@@ -60,38 +64,44 @@
     <main class="mainSpace">
 
 
-    <!-------Se ingresan las actividades del gimnasio------>
-        <div id= "titActGym" class="text-center container mt-5">
+        <!-------Se ingresan las actividades del gimnasio------>
+        <div id="titActGym" class="text-center container mt-5">
         </div>
         <section class="text-center mb-5">
-            <button onclick= verActividades() class="btnGym btn-lg"> VER ACTIVIDADES </button>
+            <button onclick=verActividades() class="btnGym btn-lg"> VER ACTIVIDADES </button>
         </section>
         <section id="actGym" class="contenedor row justify-content-around mx-5 my-3 text-center">
         </section>
-
-    <!-------Se abre un modal con la descripción de cada actividad (ficticia)------>
-    <div class="modalContainerRutinas">
-
-        <div class="modalRutinas">
-            <div id="descripcionActividades"></div>
-            <button id="cerrarRutina" class="btnGym mx-3">CERRAR VENTANA</button>
+        <!-------Se abre un modal con la descripción de cada actividad (ficticia)------>
+        <div class="modalContainerRutinas">
+            <div class="modalRutinas">
+                <div id="descripcionActividades"></div>
+                <button id="cerrarRutina" class="btnGym mx-3">CERRAR VENTANA</button>
+            </div>
         </div>
-    </div>
     </main>
     <footer>
         <div>
-        <div>
-            <a target="_blank" class="facebook" href="https://www.facebook.com/profile.php?id=100010447723135"><i class="fab fa-facebook"></i></a>
-            <a target="_blank" class="instagram" href="https://www.instagram.com/andreaguinder/"><i class="fab fa-instagram"></i></a>
-            <a target="_blank" class="linkedin" href="https://www.linkedin.com/in/andrea-bel%C3%A9n-guinder-vichich-2a74a8178/"><i class="fab fa-linkedin"></i></a>
-            <a target="_blank" class="github" href="https://github.com/andreaguinder"><i class="fab fa-github"></i></a>
-        </div>
-        <p> Copyright © | 2021 | Todos los Derechos Reservados | 
-            Diseño y Desarrollo por <a href="https://andreabelenguinder.wixsite.com/misitio" target="_blank">Andrea
-                Guinder</a></p>
+            <div>
+                <a target="_blank" class="facebook" href="https://www.facebook.com/profile.php?id=100010447723135"><i
+                        class="fab fa-facebook"></i></a>
+                <a target="_blank" class="instagram" href="https://www.instagram.com/andreaguinder/"><i
+                        class="fab fa-instagram"></i></a>
+                <a target="_blank" class="linkedin"
+                    href="https://www.linkedin.com/in/andrea-bel%C3%A9n-guinder-vichich-2a74a8178/"><i
+                        class="fab fa-linkedin"></i></a>
+                <a target="_blank" class="github" href="https://github.com/andreaguinder"><i
+                        class="fab fa-github"></i></a>
+            </div>
+            <p> Copyright © | 2021 | Todos los Derechos Reservados |
+                Diseño y Desarrollo por <a href="https://andreabelenguinder.wixsite.com/misitio" target="_blank">Andrea
+                    Guinder</a></p>
         </div>
     </footer>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--Enlace a jQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--Enlace a JavaScript-->
     <script src="../js/actividades.js"></script>
 </body>
 
