@@ -418,7 +418,7 @@ const recuperarRutina = document.getElementById("recuperarRutina");
 recuperarRutina.addEventListener("click", (e) => {
     e.preventDefault();
     const usuarioRecuperado = JSON.parse(localStorage.getItem("usuario"));
-    usuario = new Usuario(usuarioRecuperado.nombre, usuarioRecuperado.edad, usuarioRecuperado.altura, usuarioRecuperado.peso, usuarioRecuperado.esDeportista, usuarioRecuperado.intensidadEntrenamiento, usuarioRecuperado.tipoEntrenamiento);
+    usuario = new Usuario(usuarioRecuperado.nombre, usuarioRecuperado.edad, usuarioRecuperado.altura, usuarioRecuperado.peso, ((usuarioRecuperado.esDeportista) ? "si" : "no"), usuarioRecuperado.intensidadEntrenamiento, usuarioRecuperado.tipoEntrenamiento);
 
     rutinaElegida = JSON.parse(localStorage.getItem("rutinaElegida"));
     imprimirRutina();

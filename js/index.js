@@ -10,6 +10,7 @@ $("#btn-generarRutina").append(`<div>
                                 </div>`
 );
 
+// Carrousel con JQuery
 $("#carrouselEspacioGym").append(`<h2 class="text-center m-2 align-content-center">Conocé nuestro espacio</h2>
                                     <div id="carouselExampleFade" class="carousel slide carousel-fade my-3" data-bs-ride="carousel">
                                     <div class="carousel-inner mb-4">

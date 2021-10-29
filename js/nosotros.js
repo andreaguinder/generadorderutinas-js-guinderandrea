@@ -16,6 +16,5 @@ entrenadores.innerHTML = `
                     <p class="m-1">${contenidoSuperior.texto}</p>
                     </div>
                 `;
-
-
+                
 contenedorCardsEntrenadores.appendChild(entrenadores);

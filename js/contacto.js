@@ -24,8 +24,6 @@ const abrirModalDeRutina = document.getElementById("enviar")
 const cerrarRutina = document.getElementById("cerrarRutina")
 const modalContainerRutinas = document.getElementsByClassName("modalContainerRutinas")[0]
 
-
-
 //Formulario de contacto.
 
 const formulario = document.getElementById('formulario');
@@ -92,6 +90,7 @@ textareas.forEach((textarea) => {
     textarea.addEventListener('blur', validarFormulario); //hace la comprobación cuando sale del campo.
 });
 
+//Envío del formulario
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -112,7 +111,7 @@ formulario.addEventListener('submit', (e) => {
     }
 });
 
-//////animaciones concatenadas
+//Animaciones concatenadas con jQuery
 setInterval(() => {
     $("#suscribiteNewsletter").fadeOut(500).fadeIn(500)
 }, 1200);
