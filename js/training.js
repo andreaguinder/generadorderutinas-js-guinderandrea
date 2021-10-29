@@ -308,15 +308,6 @@ function crearUsuario(){
         document.getElementById("intensidadEntrenamiento").value,
         document.getElementById("tipoEntrenamiento").value
     );
-    console.log(usuario);
-    console.log(usuario.nombre);
-    console.log(usuario.edad);
-    console.log(usuario.altura);
-    console.log(usuario.peso);
-    console.log(usuario.esDeportista);    
-    console.log(usuario.intensidadEntrenamiento);
-    console.log(usuario.tipoEntrenamiento);
-    console.log(usuario.esDeportista);
 }
 
 cerrarRutina.addEventListener("click", () =>{
@@ -324,6 +315,63 @@ cerrarRutina.addEventListener("click", () =>{
 })
 
 
+formulario.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    crearUsuario();
+
+    if (campos.nombre && campos.edad && campos.altura && campos.peso) {
+        formulario.reset();
+
+    //Devolución al usuario de rutina elegida de acuerdo a objetivo e intensidad y guardado de datos en storage
+    rutinaElegida = obtenerRutina(usuario.intensidadEntrenamiento, usuario.tipoEntrenamiento);
+    localStorage.setItem("rutinaElegida", JSON.stringify(rutinaElegida));
+    localStorage.setItem("usuario", JSON.stringify(usuario));
+    imprimirRutina();
+    modalContainerRutinas.classList.toggle("modalRutinasActive")
+
+
+        document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
+            icono.classList.remove('formulario__grupo-correcto');
+        });
+        
+    } else {
+        document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+        setTimeout(() => {
+            document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
+        }, 5000);
+    }
+
+
+});
+    
+    // Recuperación de la rutina si el usuario ya la había pedido con el botón de reload
+    
+    const recuperarRutina = document.getElementById("recuperarRutina");
+    
+    recuperarRutina.addEventListener("click", (e) =>{
+        e.preventDefault();
+        const usuarioRecuperado = JSON.parse(localStorage.getItem("usuario"));
+        usuario = new Usuario(usuarioRecuperado.nombre, usuarioRecuperado.edad, usuarioRecuperado.altura, usuarioRecuperado.peso, usuarioRecuperado.esDeportista, usuarioRecuperado.intensidadEntrenamiento, usuarioRecuperado.tipoEntrenamiento);
+    
+        rutinaElegida = JSON.parse(localStorage.getItem("rutinaElegida"));
+        imprimirRutina();
+        modalContainerRutinas.classList.toggle("modalRutinasActive")
+    
+    })
+    // si no hay rutina guardada no aparece el boton de reload
+    if (localStorage.getItem("rutinaElegida") == null || localStorage.getItem("usuario") == null){
+        document.getElementById("recuperarRutina").style.display = "none";
+    }
+
+
+
+
+
+
+
+
+/*
 abrirModalDeRutina.addEventListener("click", (e) =>{
     e.preventDefault();
 
@@ -362,6 +410,10 @@ if (
     document.getElementById("recuperarRutina").style.display = "none";
 }
 
+
+
+
+*/
 /////////////////////////////////////
 //Agregamos un botón para info IMC con jQuery
 $("#infoIMC").append('<button id="btnIMC" class="btnGym" style="margin-bottom: 1rem">Info Extra</button>');

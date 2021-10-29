@@ -43,7 +43,7 @@ const campos = {
     nombre: false,
     telefono: false,
     correo: false,
-    mensaje: false
+    mensaje: false,
 }
 
 const validarFormulario = (e) => {
