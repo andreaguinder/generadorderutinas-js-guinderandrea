@@ -1,7 +1,45 @@
+h4{
+    color: $color7;
+}
+
+p{
+    color: $color5;
+}
+
+.form__contact{
+    color: $color3;
+    background-color: $color2;
+    border-radius: 5px;
+    margin-top: 0%; 
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    box-shadow: 0px 5px 5px rgba(29, 29, 29, 0.377), 0px -5px 5px rgba(32, 32, 32, 0.329);
+
+        i{
+            font-size: 1.5rem;
+        }
+}
+
+.contact__h5{
+    font-weight: bold;
+}
+
+
+.servOfrecidos{
+    color: $color1;
+    background-color: $color1;
+}
+
+.form-check-input:checked {
+    background-color: $color2;
+    border-color: $color7;
+}
+
 .formuario__label{
     display: block;
-    font-weight: 700;
-    padding: 10px;
+    font-weight: 1.5rem;
+    padding: 1rem;
     cursor: pointer;
 }
 
@@ -12,62 +50,70 @@
 .formulario__input{
     width: 100%;
     background-color: $color3;
-    border: 3px solid transparent;
-    border-radius: 3px;
+    border: 0.25rem solid transparent;
+    border-radius: 0.35rem;
     height: 2.50rem;
     line-height: auto;
-    padding: 0 40px 0 10px;
+    padding: 0 3rem 0 1rem;
     transition: .3s ease all;
 }
 
 .formulario__input--mensaje{
     width: 100%;
-    background: #fff;
-    border: 3px solid transparent;
-    border-radius: 3px;
+    background-color: $color3;
+    border: 0.25rem solid transparent;
+    border-radius: 0.35rem;
     height: 5rem;
     line-height: auto;
-    padding: 0 40px 0 10px;
+    padding: 0 3rem 0 1rem;
     transition: .3s ease all;
 }
 
 .formulario__input--mensaje:focus{
-    border: 3px solid $color7;
+    border: 0.3rem solid $color1;
     outline: none;
-    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+    box-shadow: 3px 0px 10px $color4;
 }
 
 .formulario__input:focus{
-    border: 3px solid $color7;
+    border: 0.3rem solid $color1;
     outline: none;
-    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+    box-shadow: 3px 0px 10px $color4;
 }
 
+// el texto de error debajo de los imput
 .formulario__input-error {
-    font-size: 12px;
+    font-size: 0.75rem;
     margin-bottom: 0;
     display: none;
+    color: $color5;
 }
 
 .formulario__input-error-activo {
     display: block;
 }
+
+
 .formulario__validacion-estado{
     position: absolute;
-    right: 10px;
-    bottom: 15px;
+    right: 1rem;
+    top: 0.5rem;
     z-index: 100;
     font-size: 16px;
     opacity: 0;
 }
 
 .formulario__mensaje{
-    height: 45px;
-    line-height: 45px;
-    background: #f66060;
+    height: auto;
+    padding: 20%;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    background-color: $color4;
     padding: 0 15px ;
     border-radius: 3px;
     display: none;
+    color: $color3;
 }
 
 .formulario__mensaje-activo {
@@ -78,20 +124,33 @@
     padding: 5px;
 }
 
-.formulario__grupo-correcto .formulario__validacion-estado {
-    color: #1ed12d;
+.formulario__grupo-correcto .formulario__validacion-estado{
+    color: $color7;
     opacity: 1;
 }
 
 .formulario__grupo-incorrecto .formulario__label{
-    color: #bb2929;
+    color: $color5;
 }
 
 .formulario__grupo-incorrecto .formulario__validacion-estado{
-    color: #bb2929;
+    color: $color4;
     opacity: 1;
 }
 
 .formulario__grupo-incorrecto .formulario__input {
-    border: 3px solid #bb2929; 
+    border: 3px solid $color4; 
+}
+
+//suscripcion 
+
+.recibir__novedades:focus{
+
+    background-color: $color1;
+    color: $color3;
+}
+
+.recibir__novedades:hover{
+    background-color: $color1;
+    color: $color3;
 }

@@ -64,16 +64,14 @@
 
         <section>
             <form class="form__contact p-3 formulario" id="formulario" action="">
-
                 <!------Nombre y Apellido------>
                 <div class="formulario__grupo" id="grupo__nombre">
                     <label for="nombre" class="formulario__label">Nombre y Apellido</label>
                     <div class="formulario__grupo-input">
-                        <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Jhon Doe">
+                        <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Juan Perez">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
-                    <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener
-                        números, letras y guión bajo.</p>
+                    <p class="formulario__input-error">Debe incluir su nombre y apellido con y al menos un espacio.</p>
                 </div>
 
                 <!------Teléfono------>
@@ -81,16 +79,16 @@
                     <label for="telefono" class="formulario__label">Teléfono</label>
                     <div class="formulario__grupo-input">
                         <input type="text" class="formulario__input" name="telefono" id="telefono"
-                            placeholder="2604448913">
+                            placeholder="01168477289">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
-                    <p class="formulario__input-error">El teléfono solo puede contener números y el máximo son 14
-                        dígitos.</p>
+                    <p class="formulario__input-error">El teléfono solo puede contener números y debe tener su código de
+                        área</p>
                 </div>
 
                 <!------Correo Electrónico------>
-                <div class="formulario__grupo" id="grupo__correo">
-                    <label for="correo" class="formulario__label">Correo Electrónico</label>
+                <div cgrupo" id="grupo__correo">
+                    <label for="correo" class="formulario__label">E-mail</label>
                     <div class="formulario__grupo-input">
                         <input type="email" class="formulario__input" name="correo" id="correo"
                             placeholder="correo@gmail.com">
@@ -100,18 +98,22 @@
                         correspondiente (ejemplo gmail.com)</p>
                 </div>
 
-                <!-----Elegir Actividad---->
+                <!-----Eligen sobre que consultan---->
                 <br>
                 <div class="form__elegir">
-                    <label for="actividad">Deseo recibir información sobre:</label><br><br>
-                    <label for="running">Indoor Running</label>
-                    <input type="radio" name="actividad" id="running" value="Indoor Running" required checked>
-                    <label for="spinning">Spinning</label>
-                    <input type="radio" name="actividad" id="spinning" value="Spinning" required>
-                    <label for="funcional">Funcional</label>
-                    <input type="radio" name="actividad" id="funcional" value="Funcional" required>
-                    <label for="musculacion">Musculación</label>
-                    <input type="radio" name="actividad" id="musculacion" value="Musculación" required>
+                    <label for="servicio">Deseo recibir información sobre:</label><br><br>
+                    <label class="px-1" for="running">Running</label>
+                    <input type="radio" name="servOfrecidos" id="running" value="running" required checked
+                        class="form-check-input btn-outline-secondary bg-dark border-secondary">
+                    <label class="px-1" for="spinning">Spinning</label>
+                    <input type="radio" name="servOfrecidos" id="spinning" value="spinning" required
+                        class="form-check-input btn-outline-secondary bg-dark border-secondary">
+                    <label class="px-1" for="funcional">Funcional</label>
+                    <input type="radio" name="servOfrecidos" id="funcional" value="funcional" required
+                        class="form-check-input btn-outline-secondary bg-dark border-secondary">
+                    <label class="px-1" for="musculacion">Musculación</label>
+                    <input type="radio" name="servOfrecidos" id="musculacion" value="musculacion" required
+                        class="form-check-input btn-outline-secondary bg-dark border-secondary">
                 </div>
                 <br>
 
@@ -119,8 +121,8 @@
                 <div class="formulario__grupo" id="grupo__mensaje">
                     <label for="mensaje" class="formulario__label">Consulta</label>
                     <div class="formulario__grupo-input">
-                        <textarea type="text" class="formulario__input--mensaje formulario__input" name="mensaje" id="mensaje"
-                            placeholder="Quiero consultar sobre..."></textarea>
+                        <textarea type="text" class="formulario__input--mensaje formulario__input" name="mensaje"
+                            id="mensaje" placeholder="Quiero consultar sobre..."></textarea>
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
                     <p class="formulario__input-error">La consulta debe tener al menos 10 palabras.</p>
@@ -128,22 +130,21 @@
                 <br>
                 <!------Surcribirse------>
                 <div>
-                    <label class="formulario__label">Deseo Suscribirme al Newsletter</label>
-                    <input class="formulario__checkbox" type="checkbox" value="first_checkbox" name="recibir__novedades"
-                        id="recibir__novedades">
-                    <h5 id="suscribiteNewsletter">SUSCRIBITE</h5>
+                    <label class="formulario__label form-check-label">Deseo Suscribirme al Newsletter</label>
+                    <input class="formulario__checkbox form-check-input btn-outline-secondary bg-dark border-secondary" type="checkbox"
+                        value="first_checkbox" name="recibir__novedades" id="recibir__novedades">
                 </div>
                 <!------Mensaje de Error------>
                 <div>
-                    <p class="formulario__mensaje" id="formulario__mensaje"><i
-                            class="fas fa-exclamation-triangle"></i><b>Error:</b>¡Por favor rellenar el formulario
-                        correctamente!</p>
+                    <p class="formulario__mensaje" id="formulario__mensaje">
+                        <i class="fas fa-exclamation-triangle mx-1"></i>¡Por favor rellenar el formulario!<i
+                            class="fas fa-exclamation-triangle mx-2"></i></p>
                 </div>
                 <!------Botones de Reset y Envio------>
                 <div class="formulario__grupo formulario__grupo-btn-enviar text-center">
                     <button type="reset" class="btnGym btn-lg mx-3 my-2">Restablecer</button>
                     <button type="submit" class="btnGym btn-lg mx-3">Enviar</button>
-                <!------Mensaje de Éxito de Envio------>
+                    <!------Mensaje de Éxito de Envio------>
                     <div class="modalContainerRutinas">
                         <div class="modalForm">
                             <h5 id="cerrarRutina">¡Su consulta fue enviada!</h5><button class="btnGym mx-3">CERRAR
